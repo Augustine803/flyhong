@@ -1,0 +1,11 @@
+C:\Users\1\source\repos\isPrime\isPrime\bin\Debug\netcoreapp3.1\isPrime.exe
+C:\Users\1\source\repos\isPrime\isPrime\bin\Debug\netcoreapp3.1\isPrime.deps.json
+C:\Users\1\source\repos\isPrime\isPrime\bin\Debug\netcoreapp3.1\isPrime.runtimeconfig.json
+C:\Users\1\source\repos\isPrime\isPrime\bin\Debug\netcoreapp3.1\isPrime.runtimeconfig.dev.json
+C:\Users\1\source\repos\isPrime\isPrime\bin\Debug\netcoreapp3.1\isPrime.dll
+C:\Users\1\source\repos\isPrime\isPrime\bin\Debug\netcoreapp3.1\isPrime.pdb
+C:\Users\1\source\repos\isPrime\isPrime\obj\Debug\netcoreapp3.1\isPrime.csprojAssemblyReference.cache
+C:\Users\1\source\repos\isPrime\isPrime\obj\Debug\netcoreapp3.1\isPrime.AssemblyInfoInputs.cache
+C:\Users\1\source\repos\isPrime\isPrime\obj\Debug\netcoreapp3.1\isPrime.AssemblyInfo.cs
+C:\Users\1\source\repos\isPrime\isPrime\obj\Debug\netcoreapp3.1\isPrime.dll
+C:\Users\1\source\repos\isPrime\isPrime\obj\Debug\netcoreapp3.1\isPrime.pdb
