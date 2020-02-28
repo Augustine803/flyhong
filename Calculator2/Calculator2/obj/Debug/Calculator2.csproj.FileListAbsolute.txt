@@ -1,0 +1,10 @@
+F:\C# daima\Calculator2\Calculator2\bin\Debug\Calculator2.exe.config
+F:\C# daima\Calculator2\Calculator2\bin\Debug\Calculator2.exe
+F:\C# daima\Calculator2\Calculator2\bin\Debug\Calculator2.pdb
+F:\C# daima\Calculator2\Calculator2\obj\Debug\Calculator2.csprojAssemblyReference.cache
+F:\C# daima\Calculator2\Calculator2\obj\Debug\Calculator2.Form1.resources
+F:\C# daima\Calculator2\Calculator2\obj\Debug\Calculator2.Properties.Resources.resources
+F:\C# daima\Calculator2\Calculator2\obj\Debug\Calculator2.csproj.GenerateResource.cache
+F:\C# daima\Calculator2\Calculator2\obj\Debug\Calculator2.csproj.CoreCompileInputs.cache
+F:\C# daima\Calculator2\Calculator2\obj\Debug\Calculator2.exe
+F:\C# daima\Calculator2\Calculator2\obj\Debug\Calculator2.pdb
