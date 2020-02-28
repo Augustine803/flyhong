@@ -1,0 +1,5 @@
+﻿  源.cpp
+c:\users\1\source\repos\贪吃蛇最终版\贪吃蛇最终版\源.cpp(50): warning C4838: 从“int”转换到“SHORT”需要收缩转换
+c:\users\1\source\repos\贪吃蛇最终版\贪吃蛇最终版\源.cpp(358): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+c:\users\1\source\repos\贪吃蛇最终版\贪吃蛇最终版\源.cpp(368): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  贪吃蛇最终版.vcxproj -> C:\Users\1\source\repos\贪吃蛇最终版\Debug\贪吃蛇最终版.exe
