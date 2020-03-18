@@ -1,0 +1,11 @@
+C:\Users\1\source\repos\alarm\alarm\obj\Debug\netcoreapp3.1\alarm.csprojAssemblyReference.cache
+C:\Users\1\source\repos\alarm\alarm\obj\Debug\netcoreapp3.1\alarm.AssemblyInfoInputs.cache
+C:\Users\1\source\repos\alarm\alarm\obj\Debug\netcoreapp3.1\alarm.AssemblyInfo.cs
+C:\Users\1\source\repos\alarm\alarm\bin\Debug\netcoreapp3.1\alarm.exe
+C:\Users\1\source\repos\alarm\alarm\bin\Debug\netcoreapp3.1\alarm.deps.json
+C:\Users\1\source\repos\alarm\alarm\bin\Debug\netcoreapp3.1\alarm.runtimeconfig.json
+C:\Users\1\source\repos\alarm\alarm\bin\Debug\netcoreapp3.1\alarm.runtimeconfig.dev.json
+C:\Users\1\source\repos\alarm\alarm\bin\Debug\netcoreapp3.1\alarm.dll
+C:\Users\1\source\repos\alarm\alarm\bin\Debug\netcoreapp3.1\alarm.pdb
+C:\Users\1\source\repos\alarm\alarm\obj\Debug\netcoreapp3.1\alarm.dll
+C:\Users\1\source\repos\alarm\alarm\obj\Debug\netcoreapp3.1\alarm.pdb
