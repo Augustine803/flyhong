@@ -1,0 +1,11 @@
+C:\Users\1\source\repos\OrderControl\OrderControl\bin\Debug\netcoreapp3.1\OrderControl.exe
+C:\Users\1\source\repos\OrderControl\OrderControl\bin\Debug\netcoreapp3.1\OrderControl.deps.json
+C:\Users\1\source\repos\OrderControl\OrderControl\bin\Debug\netcoreapp3.1\OrderControl.runtimeconfig.json
+C:\Users\1\source\repos\OrderControl\OrderControl\bin\Debug\netcoreapp3.1\OrderControl.runtimeconfig.dev.json
+C:\Users\1\source\repos\OrderControl\OrderControl\bin\Debug\netcoreapp3.1\OrderControl.dll
+C:\Users\1\source\repos\OrderControl\OrderControl\bin\Debug\netcoreapp3.1\OrderControl.pdb
+C:\Users\1\source\repos\OrderControl\OrderControl\obj\Debug\netcoreapp3.1\OrderControl.csprojAssemblyReference.cache
+C:\Users\1\source\repos\OrderControl\OrderControl\obj\Debug\netcoreapp3.1\OrderControl.AssemblyInfoInputs.cache
+C:\Users\1\source\repos\OrderControl\OrderControl\obj\Debug\netcoreapp3.1\OrderControl.AssemblyInfo.cs
+C:\Users\1\source\repos\OrderControl\OrderControl\obj\Debug\netcoreapp3.1\OrderControl.dll
+C:\Users\1\source\repos\OrderControl\OrderControl\obj\Debug\netcoreapp3.1\OrderControl.pdb
