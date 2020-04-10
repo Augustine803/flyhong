@@ -1,0 +1,13 @@
+C:\Users\jiaxy\source\repos\Homework6\OrderSerialize\bin\Debug\OrderApp.exe.config
+C:\Users\jiaxy\source\repos\Homework6\OrderSerialize\bin\Debug\OrderApp.exe
+C:\Users\jiaxy\source\repos\Homework6\OrderSerialize\bin\Debug\OrderApp.pdb
+C:\Users\jiaxy\source\repos\Homework6\OrderSerialize\obj\Debug\OrderApp.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\Homework6\OrderSerialize\obj\Debug\OrderApp.exe
+C:\Users\jiaxy\source\repos\Homework6\OrderSerialize\obj\Debug\OrderApp.pdb
+D:\QQ\1915393701\FileRecv\Homework6\OrderSerialize\bin\Debug\OrderApp.exe.config
+D:\QQ\1915393701\FileRecv\Homework6\OrderSerialize\bin\Debug\OrderApp.exe
+D:\QQ\1915393701\FileRecv\Homework6\OrderSerialize\bin\Debug\OrderApp.pdb
+D:\QQ\1915393701\FileRecv\Homework6\OrderSerialize\obj\Debug\OrderApp.csprojAssemblyReference.cache
+D:\QQ\1915393701\FileRecv\Homework6\OrderSerialize\obj\Debug\OrderApp.csproj.CoreCompileInputs.cache
+D:\QQ\1915393701\FileRecv\Homework6\OrderSerialize\obj\Debug\OrderApp.exe
+D:\QQ\1915393701\FileRecv\Homework6\OrderSerialize\obj\Debug\OrderApp.pdb
