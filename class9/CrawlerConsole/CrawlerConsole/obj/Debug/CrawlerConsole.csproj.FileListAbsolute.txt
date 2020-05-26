@@ -1,0 +1,14 @@
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\practice9\CrawlerConsole\CrawlerConsole\bin\Debug\CrawlerConsole.exe.config
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\practice9\CrawlerConsole\CrawlerConsole\bin\Debug\CrawlerConsole.exe
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\practice9\CrawlerConsole\CrawlerConsole\bin\Debug\CrawlerConsole.pdb
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\practice9\CrawlerConsole\CrawlerConsole\obj\Debug\CrawlerConsole.csprojAssemblyReference.cache
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\practice9\CrawlerConsole\CrawlerConsole\obj\Debug\CrawlerConsole.csproj.CoreCompileInputs.cache
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\practice9\CrawlerConsole\CrawlerConsole\obj\Debug\CrawlerConsole.exe
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\practice9\CrawlerConsole\CrawlerConsole\obj\Debug\CrawlerConsole.pdb
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\class9\CrawlerConsole\CrawlerConsole\bin\Debug\CrawlerConsole.exe.config
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\class9\CrawlerConsole\CrawlerConsole\bin\Debug\CrawlerConsole.exe
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\class9\CrawlerConsole\CrawlerConsole\bin\Debug\CrawlerConsole.pdb
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\class9\CrawlerConsole\CrawlerConsole\obj\Debug\CrawlerConsole.csprojAssemblyReference.cache
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\class9\CrawlerConsole\CrawlerConsole\obj\Debug\CrawlerConsole.csproj.CoreCompileInputs.cache
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\class9\CrawlerConsole\CrawlerConsole\obj\Debug\CrawlerConsole.exe
+C:\Users\阿飞\Desktop\whu-class-practice-master\whu-class-practice-master\class9\CrawlerConsole\CrawlerConsole\obj\Debug\CrawlerConsole.pdb

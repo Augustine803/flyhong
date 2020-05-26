@@ -1,0 +1,984 @@
+﻿<!DOCTYPE html>           
+
+<script>
+    (function (context) {
+        var data = {};
+        var url = '//imgstat.baidu.com/17.gif';
+        var start = +new Date;
+        var createQuery = function (data) {
+            var ret = [];
+            for (var key in data) {
+                ret.push(key + '=' + data[key]);
+            }
+            return ret.join('&');
+        };
+
+        var _mergeCommPara = function (data) {
+            data.etype = 'speed';
+            data.page = 'result';
+            data.logid = "10056891424628052758";
+            data.sid = 'ab6bcd28e41ba7d181fad68dea80d26aa73eead0';
+            data.wh = window.screen.width + 'x' + window.screen.height ;
+            data.sampid = '-1';
+            data.app = 'searchresult';
+            data.spat = 0 + '-' + '';
+            data.protocol = window.location.protocol.replace(':', '');
+            if ('0' - 0) {
+                data.ishttps = '0';
+            }
+            
+            data.sync = "";
+            return data;
+        };
+        var _profiles = {
+            'slider': {
+                _url: '//imgstat.baidu.com/17.gif',
+                etype: 'slide'
+            }
+        };
+        var speed = {
+            set: function (key, value) {
+                if (key) {
+                    data[key] = value || 0;
+                }
+            },
+            get: function (key) {
+                return data[key] || ('start' === key && start);
+            },
+            mark: function (key, value, ts) {
+                if (undefined === value) {
+                    value = new Date - start;
+                }
+                if (true === ts) {
+                    value = value - start;
+                }
+                data[key] = value;
+            },
+            send: function (ext) {
+                if (ext) {
+                    for (var key in ext) {
+                        data[key] = ext[key];
+                    }
+                }
+                _mergeCommPara(data);
+                var queryString = createQuery(data);
+                new Image().src = url + '?' + queryString;
+            },
+            loadmark: function () {
+                value = new Date - start;
+
+                if (speed.firstScCount) {
+                    speed.firstScCount += 1;
+                }else{
+                    speed.firstScCount = 1;
+                }
+
+                data['firstSc'] = value;
+
+            },
+            log: function (profile, data) {
+                var queryString = createQuery(data);
+                var pf = _profiles[profile];
+                var a = [];
+
+                _mergeCommPara(data);
+                for (var p in pf) {
+                    if (p.indexOf('_') !== 0) {
+                        data[p] = pf[p];
+                    }
+
+                }
+                for (var p in data) {
+                    a.push(p + '=' + data[p]);
+                }
+
+
+                (new Image).src = pf._url + '?' + a.join('&');
+            }
+        };
+        context.speed = speed;
+        speed.firstScCount = 0;
+        (function () {
+            window.logid = "10056891424628052758";
+            loaded = 0;
+            var addWindowEvent = window.addEventListener ?
+                function(type, fn) { window.addEventListener(type, fn, false); } :
+                function(type, fn) { window.attachEvent('on' + type, fn); };
+            addWindowEvent('beforeunload', function () {
+                if (!loaded) {
+                    speed.mark('leave');
+                    speed.send();
+                }
+            });
+
+            addWindowEvent('load', function () {
+                loaded = 1;
+            });
+        })();
+    })(window);
+</script>
+<script>
+    // ala进入打点
+    try {
+        if (!window._alaEnter) {
+            window._alaEnter = true;
+            function query2Json(query) {
+                var json = {};
+                var search = query.split("&");
+                for (var i = search.length - 1; i >= 0; i--) {
+                    var s = search[i].split('=');
+                    json[s[0]] = s[1];
+                }
+                return json;
+            }
+            var query = query2Json((location.search || '').replace('?', ''));
+            if (+query.hs && query.tn === 'baiduimage') {
+                var payload = 'dsp=pc&tn=result&hs=' + query.hs;
+                (new Image()).src = '//image.baidu.com/pv/pv.gif?' + payload + '&type=enter&t=' + (+new Date);
+                window._alaEnter = function (type) {
+                    (new Image()).src = '//image.baidu.com/pv/pv.gif?' + payload
+                        + '&type=' + type + '&t=' + (+new Date);
+                };
+                var sid = "c3437dbc7c1255d3a21d444d86ebf2e9234c22bd";
+                if (window.localStorage
+                    && window.localStorage.sid
+                    && window.localStorage.sid !== sid) {
+                    window._alaEnter('change');
+                }
+                window.localStorage.sid = sid;
+            }
+        }
+    } catch(e) {}
+</script>
+   <html>   <!--STATUS OK-->  <head>  
+<meta http-equiv='Content-Type' content="text/html; charset=utf-8">
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<noscript>
+<meta http-equiv="refresh" content="0;url=/i?ct=201326592&lm=-1&tn=baiduimagenojs&ipn=rnj&pv=&word=nba&z=0&pn=0&rn=20&cl=2&ie=utf-8">
+
+<style>table,.p{display:none}</style>
+
+</noscript>
+ <title>
+nba_百度图片搜索</title> <link rel="shortcut icon" href="https://www.baidu.com/cache/icon/favicon.ico" type="image/x-icon"> <link rel="icon" sizes="any" href="https://www.baidu.com/cache/icon/favicon.svg">  <script>
+    void function(a,b,c,d,e,f,g){a.alogObjectName=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=a[e].l||+new Date,d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d;var h=!0;if(a.alogObjectConfig&&a.alogObjectConfig.sample){var i=Math.random();a.alogObjectConfig.rand=i,i>a.alogObjectConfig.sample&&(h=!1)}h&&(f=b.createElement(c),f.async=!0,f.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),g=b.getElementsByTagName(c)[0],g.parentNode.insertBefore(f,g))}(window,document,"script","/hunter/alog/alog.min.js","alog"),void function(){function a(){}window.PDC={mark:function(a,b){alog("speed.set",a,b||+new Date),alog.fire&&alog.fire("mark")},init:function(a){alog("speed.set","options",a)},view_start:a,tti:a,page_ready:a}}();
+    void function(n){var o=!1;n.onerror=function(n,e,t,c){var i=!0;return!e&&/^script error/i.test(n)&&(o?i=!1:o=!0),i&&alog("exception.send","exception",{msg:n,js:e,ln:t,col:c}),!1},alog("exception.on","catch",function(n){alog("exception.send","exception",{msg:n.msg,js:n.path,ln:n.ln,method:n.method,flag:"catch"})})}(window);
+</script>     
+   <script>
+        var Ihttps_agent_config = {"http:\/\/nssug.baidu.com":"https:\/\/sp1.baidu.com\/8qUZeT8a2gU2pMbgoY3K\/su","http:\/\/img.baidu.com":"https:\/\/gss2.bdstatic.com\/70cFsjip0QIZ8tyhnq","http:\/\/himg.bdimg.com":"https:\/\/ss1.bdstatic.com\/7Ls0a8Sm1A5BphGlnYG","http:\/\/apps.bdimg.com":"https:\/\/ss0.bdstatic.com\/9_QWf8Sm1A5BphGlnYG","http:\/\/f3.baidu.com":"https:\/\/sp3.baidu.com\/-uV1bjeh1BF3odCf","http:\/\/bzclk.baidu.com":"https:\/\/gsp0.baidu.com\/9q9JcDHa2gU2pMbgoY3K","http:\/\/img0.imgtn.bdimg.com":"https:\/\/ss0.bdstatic.com\/70cFvHSh_Q1YnxGkpoWK1HF6hhy","http:\/\/img1.imgtn.bdimg.com":"https:\/\/ss1.bdstatic.com\/70cFvXSh_Q1YnxGkpoWK1HF6hhy","http:\/\/img2.imgtn.bdimg.com":"https:\/\/ss2.bdstatic.com\/70cFvnSh_Q1YnxGkpoWK1HF6hhy","http:\/\/img3.imgtn.bdimg.com":"https:\/\/ss3.bdstatic.com\/70cFv8Sh_Q1YnxGkpoWK1HF6hhy","http:\/\/img4.imgtn.bdimg.com":"https:\/\/ss0.bdstatic.com\/70cFuHSh_Q1YnxGkpoWK1HF6hhy","http:\/\/img5.imgtn.bdimg.com":"https:\/\/ss1.bdstatic.com\/70cFuXSh_Q1YnxGkpoWK1HF6hhy","http:\/\/bdimg.share.baidu.com":"https:\/\/gss0.baidu.com\/9rA4cT8aBw9FktbgoI7O1ygwehsv","http:\/\/dispatcher.video.qiyi.com":"https:\/\/gss0.bdstatic.com\/-LsZfDe52w9JkxG9m9iS_HFjgAkrreHg-_","http:\/\/passport.bdimg.com":"https:\/\/ss0.bdstatic.com\/5LMZfyabBhJ3otebn9fN2DJv"};
+    </script> <script type="text/javascript" src="//img0.bdstatic.com/static/common/mod_6f6741d.js"></script> 
+<script>
+    //记录页面开始时间, 也用于vs埋点
+    window.pageStartTime = (new Date()).getTime();
+    window.shootBannerData = [];
+    window.isBigFu = '';
+   // window.scrollTo(0, 0);
+</script>
+
+<script>
+    // 时效性热点
+        </script>
+ <link rel="stylesheet" type="text/css" href="//img1.bdstatic.com/static/common/pkg/co_0e3b33e.css"/><link rel="stylesheet" type="text/css" href="//img1.bdstatic.com/static/searchresult/pkg/result_e910a41.css"/><link rel="stylesheet" type="text/css" href="//img1.bdstatic.com/static/common/widget/ui/slider/slider_ecce195.css"/><link rel="stylesheet" type="text/css" href="//img0.bdstatic.com/static/common/widget/ui/userInfo/userInfo_5bd6198.css"/><link rel="stylesheet" type="text/css" href="//img0.bdstatic.com/static/searchresult/widget/ui/base/view/AvFilterView/AvFilterView_5709328.css"/><link rel="stylesheet" type="text/css" href="//img0.bdstatic.com/static/searchresult/widget/ui/base/view/AvMuiltSizeFilterView/AvMuiltSizeFilterView_5a57aa1.css"/><link rel="stylesheet" type="text/css" href="//img0.bdstatic.com/static/searchresult/widget/ui/base/view/AvTypeFilterView/AvTypeFilterView_cea6b92.css"/><link rel="stylesheet" type="text/css" href="//img1.bdstatic.com/static/searchresult/widget/ui/base/view/AvColorWallFilterView/AvColorWallFilterView_cf8a646.css"/><link rel="stylesheet" type="text/css" href="//img2.bdstatic.com/static/searchresult/widget/ui/base/view/AvColorFilterView/AvColorFilterView_5b1da63.css"/><link rel="stylesheet" type="text/css" href="//img1.bdstatic.com/static/searchresult/widget/pagelets/base/newImgfilter/newImgFilter_d87f4bc.css"/><link rel="stylesheet" type="text/css" href="//img2.bdstatic.com/static/common/widget/loginbar/loginbar_e8a6507.css"/></head>  <script> alog('speed.set', 'ht', +new Date); </script>  <body class=""> <script type="text/javascript">require.siteNS && require.siteNS(["searchresult", "common"]);require.resourceMap({"res":{"searchresult:widget/ui/app/noResultPage.js":{"url":"//img0.bdstatic.com/static/searchresult/widget/ui/app/noResultPage_aac2743.js","deps":["common:widget/ui/base/base.js","searchresult:widget/ui/controls/relsearchBox/relsearchBox.js","common:widget/ui/userInfo/userInfo.js","searchresult:widget/ui/controls/hotwordBox/hotwordBox.js","searchresult:widget/ui/controls/suggBox/suggBox.js","searchresult:widget/ui/models/filtermodel.js","searchresult:widget/ui/statistic/statistic.js","common:widget/ui/utils/utils.js"]},"common:widget/shitu/static/animate.js":{"url":"//img1.bdstatic.com/static/common/widget/shitu/static/animate_d5993fc.js","deps":["common:widget/ui/base/base.js"]},"common:widget/shitu/run.js":{"url":"//img0.bdstatic.com/static/common/widget/shitu/run_c4ee0ab.js","deps":["common:widget/ui/base/base.js","common:widget/ui/utils/utils.js","common:widget/shitu/static/animate.js"]},"searchresult:widget/pagelets/base/topRs/topRs.js":{"url":"//img1.bdstatic.com/static/searchresult/widget/pagelets/base/topRs/topRs_c41d15e.js","deps":["common:widget/ui/base/base.js","common:widget/ui/utils/utils.js"]},"common:widget/ui/historyRecord/historyRecord.js":{"url":"//img2.bdstatic.com/static/common/widget/ui/historyRecord/historyRecord_31e31e1.js","deps":["common:widget/ui/base/base.js","common:widget/ui/base/events.js"]},"common:widget/ui/loginBox/loginBox.js":{"url":"//img0.bdstatic.com/static/common/widget/ui/loginBox/loginBox_ea459f5.js"},"common:widget/loginbar/loginbar.js":{"url":"//img2.bdstatic.com/static/common/widget/loginbar/loginbar_f08c999.js","deps":["common:widget/ui/base/base.js","common:widget/ui/loginBox/loginBox.js","common:widget/ui/base/EventDispatcher.js"]},"common:widget/ui/sourcehttps/sourcehttps.js":{"url":"//img1.bdstatic.com/static/common/widget/ui/sourcehttps/sourcehttps_a8b93d5.js"},"common:widget/ui/fmCheck/fmCheck.js":{"url":"//img1.bdstatic.com/static/common/widget/ui/fmCheck/fmCheck_e6197fc.js","deps":["common:widget/ui/base/base.js"]},"common:widget/ui/durationStat/durationStat.js":{"url":"//img0.bdstatic.com/static/common/widget/ui/durationStat/durationStat_d292e9f.js","deps":["common:widget/ui/utils/utils.js","common:widget/ui/base/base.js"]}}});</script> 
+
+<div id="search" class="">
+<script>
+        (function() {
+            var search = document.getElementById('search');
+            var width = window.innerWidth
+                || (document.documentElement && document.documentElement.clientWidth)
+                || (document.body && document.body.clientWidth);
+            if (search && width < 1217) {
+                search.className = 'narrow ' + search.className;
+            }
+        })();
+    </script>
+<div class="s_search">
+<div id="imgSearchBox">
+<div id="imgMainSearch">
+<a href="/" class="s_logo">
+<img src="//img0.bdstatic.com/static/searchresult/img/logo-2X_32a8193.png" alt="到 百度图片首页 来" title="返回 百度图片首页">
+</a>
+<div class="s_nav">
+<form action="/search/index" class="searchform" name="f1" onsubmit="return s_submit(this,true)">
+<input type="hidden" name="tn" value="baiduimage">
+<input type="hidden" name="ipn" value="r">
+<input name="ct" type="hidden" value="201326592">
+<input name="cl" type="hidden" value="2">
+<input name="lm" type="hidden" value="-1">
+<input name="st" type="hidden" value="-1">
+<input name="fm" type="hidden" value="result">
+<input name="fr" type="hidden" value="">
+<input name="sf" type="hidden" value="1">
+<input name="fmq" type="hidden" value="">
+<input name="pv" type="hidden" value="">
+<input name="ic" type="hidden" value="0">
+<input name="nc" type="hidden" value="1">
+<input name="z" type="hidden" value="0">
+<input name="hd" type="hidden" value="0">
+<input name="latest" type="hidden" value="0">
+<input name="copyright" type="hidden" value="0">
+<input name="se" type="hidden" value="">
+<input name="showtab" type="hidden" value="0">
+<input name="fb" type="hidden" value="0">
+<input name="width" type="hidden" value="">
+<input name="height" type="hidden" value="">
+<input name="face" type="hidden" value="0">
+<input name="istype" type="hidden" value="2">
+<input name="ie" type="hidden" value="utf-8">
+<input name="ctd" type="hidden" value="">
+<input name="sid" type="hidden" value="">
+<span class="s_ipt_wr"><input id="kw" name="word" class="s_ipt" value="nba" autocomplete="off" onfocus="this.parentNode.className='s_ipt_wr active'" onblur="this.parentNode.className='s_ipt_wr'"/></span><span class="s_btn_wr"><input type="submit" class="s_btn" onmousedown="this.className='s_btn s_btn_h'" onmouseout="this.className='s_btn'"  value="百度一下"   /></span>
+</form><div id="stcontent" class="common-shitu"> <a class="sttb" hidefocus="true" id="sttb" href="javascript:void(0)" title="上传图片，搜索相关信息"> <img class="st_camera_off" src="//img1.bdstatic.com/static/common/widget/shitu/images/camera_new_off_a552294.png" width="20" height="20"> <img class="st_camera_on" src="//img2.bdstatic.com/static/common/widget/shitu/images/camera_new_on_4e3e250.png" width="20" height="20"> <div class="st_tips" id="stTipsBox">上传图片，搜索相关信息</div> <div class="st_tips_arrow_in" id="stTipArrowIn"></div> <div class="st_tips_arrow_out" id="stTipArrowOut"></div> </a> <div id="stsug" class="stsug" style="display:none"> <div id="sthead"><span>识图</span><img id="sthelp" width="13" height="13" src="//img2.bdstatic.com/static/common/widget/shitu/images/mark_b68ff2e.png" /></div> <div class="stf"> <form id="form2" target="_self" enctype="multipart/form-data" name="form2"> <a id="uploadImg" href="javascript:void(0)" data-nsclick="p=1811102&tn=index&event_type=shitu.search.click&pos=upload">本地上传<input type="file" name="image" id="stfile" size="2"></a> <div class="st_dragtg" id="dragtg" style="display:none;">提示：您也可以把图片拖到这里</div> <input id="shitu2" name="pos" value="" type="hidden"> <input name="uptype" value="upload_pc" type="hidden"> <input name="fm" value="index" type="hidden"> </form> <form id="form1" target="_self" enctype="multipart/form-data" method="get" name="form1"> <div id="sturl"> <span class="stuwr"> <input type="text" id="stuurl" placeholder="在此处粘贴图片网址" value="" autocomplete="off"  class="stuurl" name="objurl"> </span> <span class="stsb"> <input type="submit" id="sbobj" class="stsb2" onmousedown="this.className='stsb2 stsb3'" onmouseout="this.className='stsb2'" onmouseover="this.className='stsb2 stsb4'" value="识图一下"> </span> </div> <input name="filename" id="filename" value="" type="hidden"> <input name="rt" value="0" type="hidden"> <input name="rn" value="10" type="hidden"> <input id="stftn" name="ftn" value="wantu" type="hidden"> <input name="ct" value="1" type="hidden"> <input name="stt" value="0" type="hidden"> <input name="tn" value="shituresultpc" type="hidden"> <input id="shitu1" name="uptype" value="paste" type="hidden"> <input name="fm" value="index" type="hidden"> </form> </div> <div class="drag-text-tip" id="dttip">拖拽图片到此处试试</div> <div id="stmore" style="display:none;"> <div class="stmore-header">百度识图</div> <ul> <li>识别人物、搜索服饰、寻找高清素材、浏览相似美图，尽在百度识图!</li> </ul> <div class="stmore_arrow_in"></div> <div class="stmore_arrow_out"></div> </div> <a id="closest" href="javascript:void(0);" title="关闭"></a> <div id="point" style="display:none;"> <img src="//img1.bdstatic.com/img/image/shitu/feimg/uploading.gif" /><span>正在识别中，请稍候...</span> <a id="cancelst" href="javascript:void(0);" title="取消"></a> </div> <div class="undrag-text-tip" id="undragtip"> <p>抱歉，Safari不支持拖拽识图。<br/> 请保存图片到本地，通过本地上传或在搜索框粘贴图片url进行识图。</p> </div> <div class="undrag-text-tip" id="untip"> <p>IE9及以下版本浏览器不支持识图功能，<br/> 请升级浏览器或使用Chrome、QQ、搜狗浏览器进行识图</p> </div> <div id="dragtip" style="display:none;"> <span>请拖拽图片到此处</span> <div class="drag_dot_area drag_dot_left_top"></div> <div class="drag_dot_area drag_dot_left_bottom"></div> <div class="drag_dot_area drag_dot_right_top"></div> <div class="drag_dot_area drag_dot_right_bottom"></div> <a id="cancelst" href="javascript:void(0);" title="取消"></a> </div> <div class="left-border"></div> <div class="right-border"></div> </div> <div id="mock-stsug"></div> </div>  </div>
+<div id='userInfo'>
+<a target='_blank' href='http://www.baidu.com/'>百度首页</a>
+</div>
+</div>
+</div>
+</div>
+<div id="pageLayoutTipWindow">
+<div class="page-layouttip-banner">
+<div class="page-layouttip-describe">温馨提示：由于您的浏览器安装了某些插件，导致页面布局失败，重新加载可恢复布局</div>
+<div class="page-layouttip-loadbtn">重新加载</div>
+<div class="page-layouttip-viewbtn">继续查看</div>
+</div>
+</div><script>
+var commonHeaderConf = {
+	sugProdName: "image",
+	searchInputId: "kw"
+};
+void function(w){
+	window.setHeadUrl= function(o){
+		var links = {
+		i_news:['word','https://www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&fr=image&ie=utf-8',1],
+        i_webpage:['wd','https://www.baidu.com/s?ie=utf-8',1],
+		i_tieba:['kw','http://tieba.baidu.com/f?ie=utf-8',1],
+		i_zhidao:['word','http://zhidao.baidu.com/q?ct=17&pn=0&tn=ikaslist&rn=10&lm=0&ie=utf-8',1],
+		i_mp3:['key','http://music.baidu.com/search?fr=img&ie=utf-8',1],
+		i_video:['wd','https://www.baidu.com/sf/vsearch?pd=video&tn=vsearch&ie=utf-8&wrsv_spt=10',1],
+		i_map:['wd','http://map.baidu.com/?newmap=1&ie=utf-8&s=s',2],
+		i_baike:['word','http://baike.baidu.com/search/word?pic=1&sug=1&enc=utf8',1],
+		i_wenku:['word','http://wenku.baidu.com/search?ie=utf-8',1]
+		},
+		name = o.name,
+		items = links[name],
+		kw = document.getElementById(w),
+		reg = new RegExp('^\\s+|\\s+\x24'),
+		key = kw.value.replace(reg,'');
+		if(items){
+			if(key.length > 0){
+				var wd = items[0],
+					url = items[1],
+					proSign = items[2];
+				url = pro(url,wd,key,proSign);
+				o.href = url;
+
+			}else{
+				o.href = o.href.match(new RegExp('^http:\/\/.+\\.baidu\\.com'))[0];
+			}
+            if(!o.clickHandle){
+                o.onclick = function(e){
+                    if(typeof p === 'function'){
+                        e = e || window.event;
+                        p(e, 52, {isAsyn : true, to : this.name, href : this.href});
+                    }
+
+                };
+                o.clickHandle = true;
+            }
+		}
+		function pro(url,wd,key,proSign){
+			/*日文片假部分乱码\u30f7--\u30fb,转换成实体*/
+			function HtmlEncodeAndComponent(inTXT){
+				/*地图，uri编码，不转换成实体*/
+				if(proSign==2){
+					return encodeURIComponent(key);
+				}
+				var hexArray =[],entityCode = '',finalKey = '', character='',tmpInt=0;
+				for(i=0; i<inTXT.length; i++){
+					character = inTXT.charCodeAt(i).toString(16).toUpperCase();
+					tmpInt = parseInt(character,16);
+					if(tmpInt>=0x30f7&&tmpInt<=0x30fb){
+						decCode = tmpInt.toString(10);
+						entityCode = '&#'+decCode+';';
+						finalKey += encodeURIComponent(entityCode);
+
+					}else{
+						entityCode = inTXT.charAt(i);
+						if(proSign>0){
+							finalKey += encodeURIComponent(entityCode);
+						}else{
+							finalKey += entityCode;
+						}
+					}
+				}
+				return finalKey;
+			}
+			var prefix = (url.indexOf('?')>0?'&':'?') + wd +'=';
+			if(proSign == 2){
+				prefix = encodeURIComponent(prefix);
+			}
+			key = HtmlEncodeAndComponent(key);
+			return url + prefix + key;
+		}
+	}
+}(commonHeaderConf.searchInputId);
+</script>
+<div class="s_tab" id="bdpcImgTab">
+<div id="bdpcImgTopTab">
+<a href="https://www.baidu.com/"  onmousedown="setHeadUrl(this)" name="i_webpage" >网页</a>
+<a href="http://news.baidu.com/" onmousedown="setHeadUrl(this)" name="i_news">资讯</a>
+<a href="http://tieba.baidu.com/" onmousedown="setHeadUrl(this)" name="i_tieba">贴吧</a>
+<a href="http://zhidao.baidu.com/" onmousedown="setHeadUrl(this)" name="i_zhidao" >知道</a>
+<a href="http://www.baidu.com/" onmousedown="setHeadUrl(this)" name="i_video" >视频</a>
+<a href="http://music.baidu.com/" onmousedown="setHeadUrl(this)" name="i_mp3" class="eng">音乐</a>
+<b>图片</b>
+<a href="http://map.baidu.com/" onmousedown="setHeadUrl(this)" name="i_map" >地图</a>
+<a href="http://wenku.baidu.com/" onmousedown="setHeadUrl(this)" name="i_wenku">文库</a>
+<a href="https://www.baidu.com/more/" onmousedown="setHeadUrl(this)" name="i_more">更多»</a>
+</div>
+</div>
+<script>
+	var imgMainSearch = document.getElementById('imgMainSearch');
+    var imgSearchBox = document.getElementById('imgSearchBox');
+	var bdpcImgTab = document.getElementById('bdpcImgTab');
+	var bdpcImgTopTab = document.getElementById('bdpcImgTopTab');
+	
+	var setSearchStyle = function (flag) {
+		var winWidth = window.innerWidth
+		|| (document.documentElement && document.documentElement.clientWidth)
+		|| (document.body && document.body.clientWidth);
+		if (imgMainSearch && imgSearchBox && bdpcImgTab && bdpcImgTopTab && winWidth > 1920) {
+			bdpcImgTab.className = 's_tab s_img_tab';
+		    bdpcImgTopTab.className = 's_imgtop_tab';
+		    imgMainSearch.className = 's_img_search';
+	        imgSearchBox.className = 's_img_search_out';
+		} else if (flag) {
+        	imgMainSearch.className = '';
+            imgSearchBox.className = '';
+            bdpcImgTab.className = 's_tab';
+	    	bdpcImgTopTab.className = '';
+        }
+	};
+
+	setSearchStyle();
+
+	window.onresize = function () {
+		setSearchStyle(1);
+    };
+</script>
+<div id="topInfoBar">
+<div id="newImgFilter">
+<div class="new-filter-container filter">
+<div id="typeFilter" class="typeFilter"></div>
+<div id="sizeFilter" class="subFilter sizeFilter"></div>
+<div id="colorFilter" class="subFilter"></div>
+</div>
+</div><div id="topRS">
+<em class="pull-rs-title">相关搜索：</em><a class="pull-rs" title="查看 NBA 球队"  target="_self"  href="/search/index?ct=201326592&cl=2&st=-1&lm=-1&nc=1&ie=utf-8&tn=baiduimage&ipn=r&rps=1&pv=&fm=rs1&word=NBA+%E7%90%83%E9%98%9F&hs=0&oriquery=nba&ofr=nba&sensitive=0">NBA 球队</a><a class="pull-rs" title="查看 Nba 全明星"  target="_self"  href="/search/index?ct=201326592&cl=2&st=-1&lm=-1&nc=1&ie=utf-8&tn=baiduimage&ipn=r&rps=1&pv=&fm=rs1&word=Nba+%E5%85%A8%E6%98%8E%E6%98%9F&hs=0&oriquery=nba&ofr=nba&sensitive=0">Nba 全明星</a><a class="pull-rs" title="查看 Nba壁纸"  target="_self"  href="/search/index?ct=201326592&cl=2&st=-1&lm=-1&nc=1&ie=utf-8&tn=baiduimage&ipn=r&rps=1&pv=&fm=rs1&word=Nba%E5%A3%81%E7%BA%B8&hs=0&oriquery=nba&ofr=nba&sensitive=0">Nba壁纸</a><a class="pull-rs" title="查看 Nba头像"  target="_self"  href="/search/index?ct=201326592&cl=2&st=-1&lm=-1&nc=1&ie=utf-8&tn=baiduimage&ipn=r&rps=1&pv=&fm=rs1&word=Nba%E5%A4%B4%E5%83%8F&hs=0&oriquery=nba&ofr=nba&sensitive=0">Nba头像</a><a class="pull-rs" title="查看 Nba标志"  target="_self"  href="/search/index?ct=201326592&cl=2&st=-1&lm=-1&nc=1&ie=utf-8&tn=baiduimage&ipn=r&rps=1&pv=&fm=rs1&word=Nba%E6%A0%87%E5%BF%97&hs=0&oriquery=nba&ofr=nba&sensitive=0">Nba标志</a></div>
+<div id="timeliness" class="hotpot-container">
+</div>
+<script type="text/juicer" id="timeliness-tpl">
+    <div id="timeliness-bless">
+        <div class="blessing-img-wrapper">
+            <img class="blessing-img" src="${icon.normal}" alt="" />
+            <img class="blessing-img icon-zoomup" src="${icon.normal}" alt="" />
+        </div>
+        <span class="blessing-content">
+            ${title}
+        </span>
+        <div class="blessing-count-wrapper">
+            (<span class="blessing-count"></span>人)
+        </div>
+    </div>
+    <div class="egg">
+        <img class="blessing-img-egg" src="${egg}" alt="" />
+    </div>
+</script>
+</div>
+<div id="specialQuery"></div>
+<div id="browser-hotword"></div>
+
+</div>
+ 
+
+<script>
+    window.vsid = '161a2d4bab98c6f2c4db843a968d2b09e7c6f43c';
+</script>
+<div id="wrapper">
+<div id="pnlBeforeContent">
+<div class="news-slider"></div>
+<div id="smeContainer" style="display:none;">
+</div>
+</div>
+<div id="imgContainer" class="">
+<div id="timeliness-title">
+<img class="blessing-img guideIcon" src="">
+<span class="timeliness-desc"></span>
+</div>
+<div id="pnlBeforeImgList">
+<div class="memory-con" id="memoryBar" style="display: none;">您收藏时已经看到第<span class="memory-page">10</span>页，<span><a class="memory-link">点击直达</a></span><a class="memory-close"></a></div>
+</div>
+<div id="specialRecommend"></div>
+
+
+
+
+<div id="imgid">
+</div>
+<div id="lastPage" style="position:relative;overflow:hidden;padding-left:50px;zoom:1;display:none;">
+为给您提供最相关的图片结果，百度已省略与以上结果相类似的图片，您可<a href="/">点此查看更多搜索结果</a>。</div>
+<div id="ajaxInfo"></div>
+<div id="noPage" >
+<div id="dataNone" style="margin:0 0 0 15px;font-size:14px;line-height:20px;">
+抱歉，在该筛选条件下，没有找到与<font color="#C60A00">nba</font>相关的图片。</div>
+<div id="stdNone" style="margin:0 0 0 15px;font-size:14px;line-height:20px;">
+<br>
+<br>
+<font class="fB" style="font-size:14px">百度建议您：</font>
+<div style="font-size:14px;margin-top:0px;">
+<li id="listSetDefault">将筛选功能<a href="/search/index?ct=201326592&z=&s=&tn=baiduimage&ipn=r&word=nba&ie=utf-8&oe=utf-8&lm=-1&hd=0&latest=0&copyright=0&st=-1&z=&se=0&fr=&pn=0&width=&height=&face=0&ct=503316480" onclick="" >恢复默认状态</a></li>
+<li>修改当前的筛选条件</li>
+<li >看看输入的文字是否有误</li>
+</div>
+<div id=DivPost style="margin-top:0px;margin-left:15px;"></div>
+</div>
+</div>
+</div>
+<div style="clear:both;"></div>
+<p href="javascript:void(0);" id="loading"><img style="width:50px;height:54px;"/></p>
+<div id="pageMoreWrap">
+<a href="javascript:void(0);" onmousedown="p(null,499,{domid:'pageMore',type:'click'})" id="pageMore">加载更多图片</a>
+<div id="resultInfo">找到相关图片约1,040,000张</div>
+</div><div id="pnlAfterContent" style="display:none">
+<div id="cmsimage">
+<div id="hotWordDiv"></div>
+</div>
+<div id="relecom54">
+</div>
+</div>
+</div>
+<div id="loginbar" style="display:none;"> <div class="loginbar-inner"> <div class="login-png"></div> <a class="baidulogin" href="javascript:;">百度账号登陆</a> <span>或</span> <a class="baidureg" href="javascript:void(0);">注册</a> </div> <a class="loginbar-close" href="javascript:;">关闭</a> </div>  <script>
+    window.alogObjectConfig = {
+        product: '11',
+        page: '2', 
+        speed_page: '2',  
+ 
+        speed: {
+            sample: '0.01'   
+        },
+ 
+       
+        monkey: {
+            sample: '0.01'   
+        },
+ 
+        exception: { 
+            sample: '0.01' 
+        },
+ 
+        feature: {
+            sample: '0.01'
+        },
+ 
+        
+        cus: {
+            sample: '0.01' 
+        },
+ 
+        csp: {
+            sample: '0.01',
+            'default-src': [
+                {match: '*bae.baidu.com', target: 'Accept,Warn'},
+                {match: '*.baidu.com,*.bdstatic.com,*.bdimg.com,localhost,*.hao123.com,*.hao123img.com', target: 'Accept'},
+                {match: /^(127|172|192|10)(\.\d+){3}$/, target: 'Accept'},
+                {match: '*', target: 'Accept,Warn'}
+            ]
+        }
+    };
+ 
+    // pc和mobile端会稍有不同，必须严格按照该文档来部署，该段代码必须放在上面的window.alogObjectConfig配置之后
+    void function(a,b,c,d,e,f,g){a.alogObjectName=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=a[e].l||+new Date,d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d;var h=!0;if(a.alogObjectConfig&&a.alogObjectConfig.sample){var i=Math.random();a.alogObjectConfig.rand=i,i>a.alogObjectConfig.sample&&(h=!1)}h&&(f=b.createElement(c),f.async=!0,f.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),g=b.getElementsByTagName(c)[0],g.parentNode.insertBefore(f,g))}(window,document,"script","/hunter/alog/alog.min.js","alog"),void function(){function a(){}window.PDC={mark:function(a,b){alog("speed.set",a,b||+new Date),alog.fire&&alog.fire("mark")},init:function(a){alog("speed.set","options",a)},view_start:a,tti:a,page_ready:a}}();
+    void function(n){var o=!1;n.onerror=function(n,e,t,c){var i=!0;return!e&&/^script error/i.test(n)&&(o?i=!1:o=!0),i&&alog("exception.send","exception",{msg:n,js:e,ln:t,col:c}),!1},alog("exception.on","catch",function(n){alog("exception.send","exception",{msg:n.msg,js:n.path,ln:n.ln,method:n.method,flag:"catch"})})}(window);
+</script>  <script>
+    void function(e,t){for(var n=t.getElementsByTagName("img"),a=+new Date,i=[],o=function(){this.removeEventListener&&this.removeEventListener("load",o,!1),i.push({img:this,time:+new Date})},s=0;s< n.length;s++)!function(){var e=n[s];e.addEventListener?!e.complete&&e.addEventListener("load",o,!1):e.attachEvent&&e.attachEvent("onreadystatechange",function(){"complete"==e.readyState&&o.call(e,o)})}();alog("speed.set",{fsItems:i,fs:a})}(window,document);
+</script> 
+<a id="backTop" href="javascript:;" data-title="返回顶部"><div class="btn-inner-text"></div></a>
+<a href="javascript:;" id="report_link" data-title="反馈图片"><div class="btn-inner-text">反馈</div></a>
+ 
+<script>
+    (function () {
+        var pos = '';
+        if (pos == 1) {
+            pos = '-title';
+        } else if (pos == 3) {
+            pos = '-more';
+        } else {
+            pos = '';
+        }
+
+        document.addEventListener && document.addEventListener('DOMContentLoaded', function () {
+
+            var net = 0;
+            var isPreLoaded = 0;
+            var start = speed.get('start');
+
+            if(window.performance){
+                net = window.performance.timing.navigationStart;
+            }
+            net && speed.mark('net', start - net);
+            speed.mark('preloaded', isPreLoaded);
+            speed.mark('domc');
+            // 针对chrome细分数据
+            if (window.performance && window.performance.timing) {
+                var timing = window.performance.timing;
+                // tcp connct时间
+                speed.mark('dnst', timing.domainLookupEnd - timing.domainLookupStart);
+                // dns解析时间
+                speed.mark('cot', timing.connectEnd - timing.connectStart);
+                // 首字节返回时间点
+                speed.mark('rpnt', timing.responseStart);
+                if (net) {
+                    // tc跳板时间
+                    speed.mark('tct', timing.navigationStart - net);
+                    // 网络开始时间点
+                    speed.mark('nets', net);
+                }
+                speed.mark('connectStart', timing.connectStart);
+            }
+        }, false);
+
+        var addWindowEvent = window.addEventListener ?
+            function(type, fn) { window.addEventListener(type, fn, false); } :
+            function(type, fn) { window.attachEvent('on' + type, fn); };
+        addWindowEvent('load', function () {
+            var url = location.href;
+            url = url.replace(/&ctd=([^&]+)/, '');
+            if (url) {
+                window.history && window.history.replaceState && window.history.replaceState(null, "", url + '');
+            }
+
+            speed.mark('load');
+            LazySend();
+        });
+
+        function LazySend() {
+            if (speed.firstScCount >= 5) {
+                speed.mark('frm', '');
+                speed.send();
+            } else {
+                setTimeout(LazySend, 1000);
+            }
+        }
+    })();
+</script>
+<script>
+    (function () {
+        if (window._alaEnter && window._alaEnter !== true) {
+            window._alaEnter('end');
+            var oldOnerror = window.onerror;
+            window.onerror = function (msg, source, lineno, colno) {
+                try {
+                    oldOnerror && oldOnerror.apply(window, arguments);
+                    var str = 'error&source=' + source + '&msg=' + msg + '&ln=' + lineno + '&cn=' + colno;
+                    window._alaEnter(str);
+                } catch (e) {}
+            };
+        }
+    })();
+</script>
+<script>
+    </script>
+                    <script>
+    void function(a,b,c,d,e,f){function g(b){a.attachEvent?a.attachEvent("onload",b,!1):a.addEventListener&&a.addEventListener("load",b)}function h(a,c,d){d=d||15;var e=new Date;e.setTime((new Date).getTime()+1e3*d),b.cookie=a+"="+escape(c)+";path=/;expires="+e.toGMTString()}function i(a){var c=b.cookie.match(new RegExp("(^| )"+a+"=([^;]*)(;|$)"));return null!=c?unescape(c[2]):null}function j(){var a=i("PMS_JT");if(a){h("PMS_JT","",-1);try{a=a.match(/{["']s["']:(\d+),["']r["']:["']([\s\S]+)["']}/),a=a&&a[1]&&a[2]?{s:parseInt(a[1]),r:a[2]}:{}}catch(c){a={}}a.r&&b.referrer.replace(/#.*/,"")!=a.r||alog("speed.set","wt",a.s)}}if(a.alogObjectConfig){var k=a.alogObjectConfig.sample,l=a.alogObjectConfig.rand;d="https:"===a.location.protocol?"https://fex.bdstatic.com"+d:"http://fex.bdstatic.com"+d,k&&l&&l>k||(g(function(){alog("speed.set","lt",+new Date),e=b.createElement(c),e.async=!0,e.src=d+"?v="+~(new Date/864e5)+~(new Date/864e5),f=b.getElementsByTagName(c)[0],f.parentNode.insertBefore(e,f)}),j())}}(window,document,"script","/hunter/alog/dp.min.js");
+</script>   </body><script type="text/javascript"  src="//img0.bdstatic.com/static/common/widget/ui/base/base_a66ce51.js" ></script>
+<script type="text/javascript"  src="//img0.bdstatic.com/static/common/pkg/cores_ddf2bfa.js" ></script>
+<script type="text/javascript"  src="//img1.bdstatic.com/static/common/widget/ui/juicer/juicer_59c3d50.js" ></script>
+<script type="text/javascript"  src="//img1.bdstatic.com/static/searchresult/pkg/result_f80d280.js" ></script>
+<script type="text/javascript">!function(){    window._alaEnter && window._alaEnter !== true && window._alaEnter('sample');
+    var sample = [];
+    var keyValue = '';
+    for(var name in sample) {
+        keyValue +=  name + ':' + sample[name] + ',';
+    }
+    window.samplekey = keyValue.substr(0, keyValue.length - 1);
+}();
+!function(){// ala进入问题调查
+window._alaEnter && window._alaEnter !== true && window._alaEnter('prerequire');
+require.async(['searchresult:widget/ui/app/app'], function (app) {
+    window._alaEnter && window._alaEnter !== true && window._alaEnter('postrequire');
+    require.async(['searchresult:widget/ui/action/base/base']);
+    app.setPageInfo({
+        // 在后端对query进行抽样的时候，用这个来统计实验组和对照组
+        queryPageType : '0',
+        tag_type: '',
+        tag: '',
+        subtag: '',
+        gsm: '1e',
+        listNum : '1888',
+        dispNum : '1045513',
+        bdIsClustered : '1',
+        fr : '',
+        sme : '',
+        ie : 'utf-8',
+        oe : 'utf-8',
+        fInsertNum : "0",
+        queryWordEnc: 'nba',
+        queryWordGBKEnc: 'nba',
+        queryWord : 'nba',
+        queryUrlWord : 'nba',
+        bdFmtDispNum : '1045513',
+        bdSearchTime : '',
+        gbkword:'nba',
+        resTabs : [],
+        userid:'',
+        useSign:'',
+        userNumID:'', // 这个才是真正的 userid
+        encodeUserNumId:'',
+        spaceUrl:'',
+        hasUserName: ('' == '0'),
+        bdstoken : '',
+        thirdLogo :'0', // 第三方网站登录的logo，为空则不显示
+        se:'',
+        needIE:'1',
+        jit:'',
+        showHot:'',
+        hasResult: '1',
+        aspSID:'',
+        oriquery: '',
+        fm: 'result',
+        hs: '0',
+        adBigPicPos: -1,
+                checkHttps: 0,
+                strategyType: 'normal',
+                                        personalized:'0'
+    });
+    app.setData('jsConfs', {    "normal": {        "margin": 5,        "padding": 0,        "pageNumHeight": 33,"lineHeight": 200,        "maxBaseLineHeight": 220,        "minBaseLineHeight": 200,"pageLineNum": 3,        "pageImgLimit": 20,        "imgDigestHeight": 0,"maxImgWidth": 400,"pageMoreNum": 10,"leftMenu": 0    },    "comic": {        "margin": 5,        "padding": 0,        "pageNumHeight": 33,        "lineHeight": 190,        "maxBaseLineHeight": 210,        "minBaseLineHeight": 190,        "pageLineNum": 3,        "pageImgLimit": 20,        "imgDigestHeight": 0,        "maxImgWidth": 400,        "pageMoreNum": 10,        "leftMenu": 0    },    "ald": {        "margin": 5,        "padding": 0,        "pageNumHeight": 33,        "lineHeight": 190,        "maxBaseLineHeight": 210,        "minBaseLineHeight": 190,        "pageLineNum": 3,        "pageImgLimit": 20,        "imgDigestHeight": 0,        "maxImgWidth": 400,        "pageMoreNum": 10,        "leftMenu": 0    },    "star": {        "margin": 5,        "padding": 0,        "pageNumHeight": 33,        "lineHeight": 260,        "maxBaseLineHeight": 280,        "minBaseLineHeight": 250,        "pageLineNum": 3,        "pageImgLimit": 20,        "imgDigestHeight": 0,        "maxImgWidth": 400,        "pageMoreNum": 10,        "leftMenu":0    },    "avatar_brand": {        "margin": 5,        "padding": 0,        "pageNumHeight": 33,        "lineHeight": 300,        "maxBaseLineHeight": 320,        "minBaseLineHeight": 280,        "pageLineNum": 3,        "pageImgLimit": 20,        "imgDigestHeight": 0,        "maxImgWidth": 500,        "pageMoreNum": 10,"leftMenu": 0    },    "avatar_star": {        "margin": 5,        "padding": 0,        "pageNumHeight": 33,        "lineHeight": 260,        "maxBaseLineHeight": 280,        "minBaseLineHeight": 250,        "pageLineNum": 3,        "pageImgLimit": 20,        "imgDigestHeight": 0,        "maxImgWidth": 400,        "pageMoreNum": 10,"leftMenu": 0    },    "avatar_head": {        "margin": 5,        "padding": 0,        "pageNumHeight": 33,        "lineHeight": 200,        "maxBaseLineHeight": 210,        "minBaseLineHeight": 190,        "pageLineNum": 3,        "pageImgLimit": 20,        "imgDigestHeight": 0,        "maxImgWidth": 400,        "pageMoreNum": 10,        "leftMenu": 190    },    "avatar_wallpaper": {        "margin": 5,        "padding": 0,        "pageNumHeight": 33,        "lineHeight": 180,        "maxBaseLineHeight": 200,        "minBaseLineHeight": 160,        "pageLineNum": 3,        "pageImgLimit": 20,        "imgDigestHeight": 0,        "maxImgWidth": 400,        "pageMoreNum": 10,        "leftMenu": 190    },    "single": {        "margin": 5,        "padding": 0,        "pageNumHeight": 33,        "lineHeight": 200,        "maxBaseLineHeight": 220,        "minBaseLineHeight": 200,        "pageLineNum": 1,        "pageImgLimit": 20,        "imgDigestHeight": 0,        "maxImgWidth": 400,        "pageMoreNum": 10,        "leftMenu": 0    },    "personalized": {        "margin": 5,        "padding": 0,        "pageNumHeight": 33,        "lineHeight": 200,        "maxBaseLineHeight": 220,        "minBaseLineHeight": 200,        "pageLineNum": 2,        "pageImgLimit": 20,        "imgDigestHeight": 0,        "maxImgWidth": 400,        "pageMoreNum": 10,        "leftMenu": 0    }}
+);
+    app.setData('imgData', {    "queryEnc":"nba",    "displayNum":1045513,    "bdIsClustered" : "1",    "listNum":1888,    "bdFmtDispNum" : "1045513",    "bdSearchTime" : "",    "isNeedAsyncRequest":0,"data":[{"thumbURL":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3657258963,1315074145&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img3.imgtn.bdimg.com\/it\/u=3657258963,1315074145&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img3.imgtn.bdimg.com\/it\/u=3657258963,1315074145&fm=214&gp=0.jpg","FromURL":"http:\/\/news.duote.com\/50\/148121.html","FromUrl":"http:\/\/news.duote.com\/50\/148121.html"},{"ObjURL":"http:\/\/img2.2345.com\/duoteimg\/zixunimg\/local\/2016\/09\/22\/14745078805679.jpg","ObjUrl":"http:\/\/img2.2345.com\/duoteimg\/zixunimg\/local\/2016\/09\/22\/14745078805679.jpg","FromURL":"http:\/\/news.duote.com\/50\/148121.html","FromUrl":"http:\/\/news.duote.com\/50\/148121.html"}],"adType":"0","middleURL":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3657258963,1315074145&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3657258963,1315074145&fm=26&gp=0.jpg",            "pageNum":0,            "objURL":"http://img2.duote.com/duoteimg/zixunImg/local/2016/09/22/14745078805679.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fgjof_z&e3B175pj_z&e3Bv54AzdH3FcaAzdH3F89b8d8_z&e3Bip4s",            "fromURLHost":"news.duote.com","currentIndex":"",            "width":600,            "height":399,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "3293063474_36_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"217470",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2016-09-22 09:33",            "fromPageTitle":"<strong>nba<\/strong>版\"釜山行\":韦德脑袋变球 詹姆斯成大魔王【组图】",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "3657258963,1315074145",            "os" : "3347112518,165148099",            "simid" : "4130146167,869816919",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1229616659,2735492520&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img4.imgtn.bdimg.com\/it\/u=1229616659,2735492520&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img4.imgtn.bdimg.com\/it\/u=1229616659,2735492520&fm=214&gp=0.jpg","FromURL":"http:\/\/sports.ifeng.com\/a\/20181025\/60127466_0.shtml","FromUrl":"http:\/\/sports.ifeng.com\/a\/20181025\/60127466_0.shtml"},{"ObjURL":"http:\/\/www.cy27.com\/d\/file\/2018-10-25\/cbf051f508dfd140dc83d41909ea8922.jpeg","ObjUrl":"http:\/\/www.cy27.com\/d\/file\/2018-10-25\/cbf051f508dfd140dc83d41909ea8922.jpeg","FromURL":"http:\/\/www.cy27.com\/sports\/nba\/2018-10-25\/69344.html","FromUrl":"http:\/\/www.cy27.com\/sports\/nba\/2018-10-25\/69344.html"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1229616659,2735492520&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1229616659,2735492520&fm=26&gp=0.jpg",            "pageNum":1,            "objURL":"http://c2.hoopchina.com.cn/uploads/star/event/images/181025/455012b0b316a3c29e6dde75e44a1c9d0b2bbe63.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fooo_z&e3Bhwgfwtfit_z&e3Bv54AzdH3FsqgjofAzdH3Fnm0b9_z&e3Bip4s",            "fromURLHost":"www.kansaishi.com","currentIndex":"",            "width":1079,            "height":809,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1210591538_36_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"49500",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2019-07-08 16:11",            "fromPageTitle":"<strong>nba<\/strong>官方发布今日11支获胜球队的图集",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "1229616659,2735492520",            "os" : "2081743652,1141209761",            "simid" : "4083404469,647244678",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1651260579,3330969176&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img4.imgtn.bdimg.com\/it\/u=1651260579,3330969176&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img4.imgtn.bdimg.com\/it\/u=1651260579,3330969176&fm=214&gp=0.jpg","FromURL":"http:\/\/www.weibo.com\/5757022956\/profile?topnav=1&wvr=6","FromUrl":"http:\/\/www.weibo.com\/5757022956\/profile?topnav=1&wvr=6"},{"ObjURL":"http:\/\/wx4.sinaimg.cn\/crop.0.0.758.425.1000\/006hbseygy1fg5r740536j30l20caju5.jpg","ObjUrl":"http:\/\/wx4.sinaimg.cn\/crop.0.0.758.425.1000\/006hbseygy1fg5r740536j30l20caju5.jpg","FromURL":"http:\/\/s.weibo.com\/weibo\/#\u59dd\u8bb3\u9ab8\u6d5c\u65bf\u76ac#","FromUrl":"http:\/\/s.weibo.com\/weibo\/#\u59dd\u8bb3\u9ab8\u6d5c\u65bf\u76ac#"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1651260579,3330969176&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1651260579,3330969176&fm=26&gp=0.jpg",            "pageNum":2,            "objURL":"http://wx4.sinaimg.cn/crop.0.0.758.425.1000/006hBSEYgy1fg5r740536j30l20caju5.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Ff_z&e3Bojtk5_z&e3Bv54AzdH3Fojtk5AzdH3F#姝讳骸浜斿皬#",            "fromURLHost":"s.weibo.com","currentIndex":"",            "width":758,            "height":425,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1166551346_37_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"53460",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2016-06-22 16:51",            "fromPageTitle":"【<strong>nba<\/strong>】金州勇士 vs 克里夫兰骑士",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "1651260579,3330969176",            "os" : "1973612655,2343808298",            "simid" : "4269165522,696546842",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3869953327,3561911147&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img2.imgtn.bdimg.com\/it\/u=3869953327,3561911147&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img2.imgtn.bdimg.com\/it\/u=3869953327,3561911147&fm=214&gp=0.jpg","FromURL":"http:\/\/www.9553.com\/android\/38985.html","FromUrl":"http:\/\/www.9553.com\/android\/38985.html"},{"ObjURL":"http:\/\/img.9553.com\/uploadfile\/2016\/1013\/20161013083613563.jpg","ObjUrl":"http:\/\/img.9553.com\/uploadfile\/2016\/1013\/20161013083613563.jpg","FromURL":"http:\/\/www.9553.com\/android\/40261.html","FromUrl":"http:\/\/www.9553.com\/android\/40261.html"}],"adType":"0","middleURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3869953327,3561911147&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3869953327,3561911147&fm=26&gp=0.jpg",            "pageNum":3,            "objURL":"http://img.9553.com/uploadfile/2016/0827/20160827023326823.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fooo_z&e3Blccn_z&e3Bv54AzdH3Fwg165t1AzdH3Fnma0l_z&e3Bip4s",            "fromURLHost":"www.9553.com","currentIndex":"",            "width":550,            "height":309,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "3180865842_27_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"205590",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2009-12-21 00:00",            "fromPageTitle":"<strong>nba<\/strong>2k17安卓版 v1.",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "3869953327,3561911147",            "os" : "1181760618,2508430996",            "simid" : "3371290765,316424186",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3459533770,1124538499&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img0.imgtn.bdimg.com\/it\/u=3459533770,1124538499&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img0.imgtn.bdimg.com\/it\/u=3459533770,1124538499&fm=214&gp=0.jpg","FromURL":"http:\/\/weimeiba.com\/so\/nba\u5f53\u5bb6\u7403\u661f\u6392\u884c\u699c.html","FromUrl":"http:\/\/weimeiba.com\/so\/nba\u5f53\u5bb6\u7403\u661f\u6392\u884c\u699c.html"},{"ObjURL":"http:\/\/world.haiwainet.cn\/nmediafile\/2014\/1208\/local201412081106000494116029555.jpg","ObjUrl":"http:\/\/world.haiwainet.cn\/nmediafile\/2014\/1208\/local201412081106000494116029555.jpg","FromURL":"http:\/\/www.po369.com\/tupian\/\u7ec9\u621e\u762e11\u699b\u621c\u6c49\u93c8\u581c\u7b02\u9474\u6c2c\u6d58.html","FromUrl":"http:\/\/www.po369.com\/tupian\/\u7ec9\u621e\u762e11\u699b\u621c\u6c49\u93c8\u581c\u7b02\u9474\u6c2c\u6d58.html"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3459533770,1124538499&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3459533770,1124538499&fm=26&gp=0.jpg",            "pageNum":4,            "objURL":"http://world.haiwainet.cn/NMediaFile/2014/1208/LOCAL201412081106000494116029555.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fo56s1_z&e3Biwtowtgjp_z&e3BvgAzdH3FgAzdH3Fda89AzdH3F8dabAzdH3Fv9cmbnd-d8ca9bm0-c_z&e3Bip4s",            "fromURLHost":"world.haiwainet.cn","currentIndex":"",            "width":1000,            "height":675,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "3359123762_37_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"25300",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2014-12-08 11:12",            "fromPageTitle":"<strong>nba<\/strong>球星穿\"无法呼吸\"t恤力挺\"锁喉\"案死者【5】",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "3459533770,1124538499",            "os" : "1156584719,506492933",            "simid" : "4172411706,629113900",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1327272567,3957777062&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img2.imgtn.bdimg.com\/it\/u=1327272567,3957777062&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img2.imgtn.bdimg.com\/it\/u=1327272567,3957777062&fm=214&gp=0.jpg","FromURL":"http:\/\/finance.sina.com.cn\/stock\/usstock\/c\/20141118\/195920853371.shtml","FromUrl":"http:\/\/finance.sina.com.cn\/stock\/usstock\/c\/20141118\/195920853371.shtml"},{"ObjURL":"http:\/\/p0.ifengimg.com\/pmop\/2018\/1022\/bbeb2113d148216480822cc0ff0e64fa7ad34ef1_size59_w550_h330.jpeg","ObjUrl":"http:\/\/p0.ifengimg.com\/pmop\/2018\/1022\/bbeb2113d148216480822cc0ff0e64fa7ad34ef1_size59_w550_h330.jpeg","FromURL":"http:\/\/wemedia.ifeng.com\/83259256\/wemedia.shtml","FromUrl":"http:\/\/wemedia.ifeng.com\/83259256\/wemedia.shtml"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1327272567,3957777062&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1327272567,3957777062&fm=26&gp=0.jpg",            "pageNum":5,            "objURL":"http://i1.sinaimg.cn/cj/2014/1118/U5403P31DT20141118195856.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3F65ssgjof_z&e3Bp7xt_z&e3Bv54_z&e3BvgAzdH3Fz33AzdH3F8lc890dmcuqz98c8l0_z&e3Bip4s",            "fromURLHost":"rollnews.tuxi.com.cn","currentIndex":"",            "width":550,            "height":330,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1021846434_27_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"167310",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2009-12-21 00:00",            "fromPageTitle":"巨星「抱团」生意经:<strong>nba<\/strong>真的变无聊了吗?",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "1327272567,3957777062",            "os" : "1742989634,2991125730",            "simid" : "3491829756,404363760",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1513537007,3858986839&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img2.imgtn.bdimg.com\/it\/u=1513537007,3858986839&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img2.imgtn.bdimg.com\/it\/u=1513537007,3858986839&fm=214&gp=0.jpg","FromURL":"http:\/\/jm.newhouse.fang.com\/2015-05-27\/16030028.htm","FromUrl":"http:\/\/jm.newhouse.fang.com\/2015-05-27\/16030028.htm"},{"ObjURL":"http:\/\/d.ifengimg.com\/mw640_q75\/p1.ifengimg.com\/yidian\/2017_13\/62ef20d7bfce186_w641_h427.jpg","ObjUrl":"http:\/\/d.ifengimg.com\/mw640_q75\/p1.ifengimg.com\/yidian\/2017_13\/62ef20d7bfce186_w641_h427.jpg","FromURL":"http:\/\/share.iclient.ifeng.com\/lady\/vnzq\/sharenews?aid=120325556&f_news=1","FromUrl":"http:\/\/share.iclient.ifeng.com\/lady\/vnzq\/sharenews?aid=120325556&f_news=1"}],"adType":"0","middleURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1513537007,3858986839&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1513537007,3858986839&fm=26&gp=0.jpg",            "pageNum":6,            "objURL":"http://i2.wp.com/clutch.hk/wp-content/uploads/2015/05/hawks-cavaliers-g1.jpg?resize=1200%2C788",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fvs7pvi_z&e3BihAzdH3Fda8cAzdH3FacAzdH3Fd8AzdH3Fks522j6-4y-etjo-5g-utgws-u576AzdH3F",            "fromURLHost":"clutch.hk","currentIndex":"",            "width":1200,            "height":788,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "3282577714_27_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"101970",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2014-06-14 00:00",            "fromPageTitle":"图片:<strong>nba<\/strong>.com",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "1513537007,3858986839",            "os" : "3226045915,1125195502",            "simid" : "3319229214,147896974",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2118617523,3722225301&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img3.imgtn.bdimg.com\/it\/u=2118617523,3722225301&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img3.imgtn.bdimg.com\/it\/u=2118617523,3722225301&fm=214&gp=0.jpg","FromURL":"http:\/\/sports.mop.com\/a\/181031163259857000000.html","FromUrl":"http:\/\/sports.mop.com\/a\/181031163259857000000.html"},{"ObjURL":"http:\/\/d.ifengimg.com\/w600\/e0.ifengimg.com\/03\/2018\/1210\/c1e1a2d46212ecc0b2196ad774f61a9517ea135f_size179_w1000_h716.jpeg","ObjUrl":"http:\/\/d.ifengimg.com\/w600\/e0.ifengimg.com\/03\/2018\/1210\/c1e1a2d46212ecc0b2196ad774f61a9517ea135f_size179_w1000_h716.jpeg","FromURL":"http:\/\/wemedia.ifeng.com\/92268860\/wemedia.shtml","FromUrl":"http:\/\/wemedia.ifeng.com\/92268860\/wemedia.shtml"}],"adType":"0","middleURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2118617523,3722225301&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2118617523,3722225301&fm=26&gp=0.jpg",            "pageNum":7,            "objURL":"http://01imgmini.eastday.com/mobile/20181031/20181031163259_12af026ab325f4eb0d99f1c41c59971c_1.jpeg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Ffr56pf_z&e3Bjwfp1wy_z&e3Bv54AzdH3FwAzdH3F8b8an88mndclbc0aaaaaa_z&e3Bip4s",            "fromURLHost":"sports.eastday.com","currentIndex":"",            "width":600,            "height":429,            "type":"jpeg",            "is_gif":0,            "strategyAssessment": "3267897650_33_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"28820",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2018-12-07 12:28",            "fromPageTitle":"未来派——<strong>nba<\/strong>十大可以接掌未来的球员",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "2118617523,3722225301",            "os" : "3679369437,4030277303",            "simid" : "3298744730,283010008",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2228653594,50250206&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img4.imgtn.bdimg.com\/it\/u=2228653594,50250206&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img4.imgtn.bdimg.com\/it\/u=2228653594,50250206&fm=214&gp=0.jpg","FromURL":"http:\/\/big5.news.cn\/gate\/big5\/www.xinhuanet.com\/sports\/nba.htm","FromUrl":"http:\/\/big5.news.cn\/gate\/big5\/www.xinhuanet.com\/sports\/nba.htm"},{"ObjURL":"http:\/\/www.xinhuanet.com\/sports\/1119949125_title0h.jpg","ObjUrl":"http:\/\/www.xinhuanet.com\/sports\/1119949125_title0h.jpg","FromURL":"http:\/\/www.xinhuanet.com\/sports\/?{hongzhizhu_today}39553target=_blank","FromUrl":"http:\/\/www.xinhuanet.com\/sports\/?{hongzhizhu_today}39553target=_blank"}],"adType":"0","middleURL":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2228653594,50250206&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2228653594,50250206&fm=26&gp=0.jpg",            "pageNum":8,            "objURL":"http://www.news.cn/sports/1119949125_title0h.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fkt2c_z&e3Bxtgi7wgjp_z&e3Bv54AzdH3F2wpjAzdH3Fkt2cAzdH3Fooo_z&e3Bgjof_z&e3BvgAzdH3Ffr56pf",            "fromURLHost":"big5.xinhuanet.com","currentIndex":"",            "width":680,            "height":406,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1303914802_39_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"32230",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2013-12-16 18:38",            "fromPageTitle":"<strong>nba<\/strong>:勇士胜雄鹿",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "2228653594,50250206",            "os" : "3034378127,2676215950",            "simid" : "3162189975,3759281025",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1797412500,2438541397&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img0.imgtn.bdimg.com\/it\/u=1797412500,2438541397&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img0.imgtn.bdimg.com\/it\/u=1797412500,2438541397&fm=214&gp=0.jpg","FromURL":"http:\/\/rollnews.tuxi.com.cn\/zjj\/195192282fqz100023445.html","FromUrl":"http:\/\/rollnews.tuxi.com.cn\/zjj\/195192282fqz100023445.html"},{"ObjURL":"http:\/\/06.imgmini.eastday.com\/mobile\/20171024\/8c04265f5cdbf20bd2492dbdf89ac2c9.jpeg","ObjUrl":"http:\/\/06.imgmini.eastday.com\/mobile\/20171024\/8c04265f5cdbf20bd2492dbdf89ac2c9.jpeg","FromURL":"http:\/\/sports.eastday.com\/a\/171024132411816000000.html","FromUrl":"http:\/\/sports.eastday.com\/a\/171024132411816000000.html"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1797412500,2438541397&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1797412500,2438541397&fm=26&gp=0.jpg",            "pageNum":9,            "objURL":"http://05.imgmini.eastday.com/mobile/20171009/20171009151525_caf9efe5b330a6d7602a778d6ff3a824_3.jpeg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fooo_z&e3Biw5xyx_z&e3Bv54AzdH3FkAzdH3F8b8bcacndnnnAzdH3F8b8bcacndnnnm89nnbb_z&e3Bip4s",            "fromURLHost":"www.haoxyx.com","currentIndex":"",            "width":640,            "height":457,            "type":"jpeg",            "is_gif":0,            "strategyAssessment": "3309840690_37_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"109450",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2009-12-21 00:00",            "fromPageTitle":"奥尼尔在他的<strong>nba<\/strong>第一个赛季是篮板王和盖帽王吗",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "1797412500,2438541397",            "os" : "2266042636,247964475",            "simid" : "3323462401,42127509",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2271536942,3081270437&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img2.imgtn.bdimg.com\/it\/u=2271536942,3081270437&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img2.imgtn.bdimg.com\/it\/u=2271536942,3081270437&fm=214&gp=0.jpg","FromURL":"http:\/\/tieba.baidu.com\/p\/4594871683","FromUrl":"http:\/\/tieba.baidu.com\/p\/4594871683"},{"ObjURL":"http:\/\/img.qqzhi.com\/upload\/img_0_2505290923d1927340517_27.jpg","ObjUrl":"http:\/\/img.qqzhi.com\/upload\/img_0_2505290923d1927340517_27.jpg","FromURL":"http:\/\/www.qqzhi.com\/tag\/\u746d\u7470\ue74b\u93c2\ue21a\ue1ee\u93b4\u6a3b\u6f68\u934f\u626e\u58d2\/","FromUrl":"http:\/\/www.qqzhi.com\/tag\/\u746d\u7470\ue74b\u93c2\ue21a\ue1ee\u93b4\u6a3b\u6f68\u934f\u626e\u58d2\/"}],"adType":"0","middleURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2271536942,3081270437&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2271536942,3081270437&fm=26&gp=0.jpg",            "pageNum":10,            "objURL":"http://img.weitiyuba.com/mmbiz/HuLWicbPqDIkPwSkGtX0trpomfKFQzhqpvFb6wDlkrOzzKK1bLbCiazlOWfmEhXPsXNpImJ8jvvyCHVNEreBTGQA/0?wx_fmt=jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fooo_z&e3Bojtpty7kw_z&e3Bv54AzdH3FkwfhjpkwssAzdH3F898b_z&e3Bip4s",            "fromURLHost":"www.weitiyuba.com","currentIndex":"",            "width":1062,            "height":920,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1192765746_26_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"104500",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2017-09-24 10:41",            "fromPageTitle":"精选2000年后<strong>nba<\/strong>总决赛经典照片",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "2271536942,3081270437",            "os" : "3846867626,991632314",            "simid" : "3207259538,4075652468",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2654530192,2040171825&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img2.imgtn.bdimg.com\/it\/u=2654530192,2040171825&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img2.imgtn.bdimg.com\/it\/u=2654530192,2040171825&fm=214&gp=0.jpg","FromURL":"http:\/\/kdjian.tuxi.com.cn\/viewb-54810-548106761.html","FromUrl":"http:\/\/kdjian.tuxi.com.cn\/viewb-54810-548106761.html"},{"ObjURL":"http:\/\/a3.att.hudong.com\/60\/24\/01200000005401114612402064560.jpg","ObjUrl":"http:\/\/a3.att.hudong.com\/60\/24\/01200000005401114612402064560.jpg","FromURL":"http:\/\/tublao.tuxi.com.cn\/viewb-54810-548106761.html","FromUrl":"http:\/\/tublao.tuxi.com.cn\/viewb-54810-548106761.html"}],"adType":"0","middleURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2654530192,2040171825&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2654530192,2040171825&fm=26&gp=0.jpg",            "pageNum":11,            "objURL":"http://a3.att.hudong.com/60/24/01200000005401114612402064560.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3F2w5zitg2_z&e3Bp7xt_z&e3Bv54_z&e3BvgAzdH3Fetjok-c9b8a-c9b8am0m8_z&e3Bip4s",            "fromURLHost":"gaozhing.tuxi.com.cn","currentIndex":"",            "width":400,            "height":300,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1173891378_32_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"38610",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2008-03-26 20:37",            "fromPageTitle":"<strong>nba<\/strong>哪个球队单赛季季后赛打的场次最多?",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "2654530192,2040171825",            "os" : "649565642,4239793851",            "simid" : "4220140062,693376063",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2475921812,2313147375&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img2.imgtn.bdimg.com\/it\/u=2475921812,2313147375&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img2.imgtn.bdimg.com\/it\/u=2475921812,2313147375&fm=214&gp=0.jpg","FromURL":"http:\/\/tiyu.eastday.com\/a\/180322135602296000000.html","FromUrl":"http:\/\/tiyu.eastday.com\/a\/180322135602296000000.html"},{"ObjURL":"http:\/\/dingyue.ws.126.net\/2020\/0317\/81780222j00q7bmdi001nc000sw00jgm.jpg","ObjUrl":"http:\/\/dingyue.ws.126.net\/2020\/0317\/81780222j00q7bmdi001nc000sw00jgm.jpg","FromURL":"http:\/\/dy.163.com\/v2\/article\/detail\/f7u19dlb054971gq.html","FromUrl":"http:\/\/dy.163.com\/v2\/article\/detail\/f7u19dlb054971gq.html"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2475921812,2313147375&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2475921812,2313147375&fm=26&gp=0.jpg",            "pageNum":12,            "objURL":"http://00.imgmini.eastday.com/mobile/20180322/20180322135602_9751aa7120e6b1200dd2d5f05d07bb6f_1.jpeg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Ffr56pf_z&e3Bjwfp1wy_z&e3Bv54AzdH3FwAzdH3F8bandd8ncmaddlmaaaaaa_z&e3Bip4s",            "fromURLHost":"sports.eastday.com","currentIndex":"",            "width":1040,            "height":700,            "type":"jpeg",            "is_gif":0,            "strategyAssessment": "1313351842_36_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"65670",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2016-07-31 00:00",            "fromPageTitle":"篮球 <strong>nba<\/strong> 正文  (搜狐体育独家稿件 未经授权严禁转载)北京时间3月22",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "2475921812,2313147375",            "os" : "1633254051,2128706546",            "simid" : "4224612018,448391154",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2186503775,1336869966&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img0.imgtn.bdimg.com\/it\/u=2186503775,1336869966&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img0.imgtn.bdimg.com\/it\/u=2186503775,1336869966&fm=214&gp=0.jpg","FromURL":"http:\/\/www.ak186.com\/html\/181111211910213.html","FromUrl":"http:\/\/www.ak186.com\/html\/181111211910213.html"},{"ObjURL":"http:\/\/www.zbkczx.com\/d\/file\/2019-12-29\/a9b91f54c9f9e6d10af75d5b876e3748.jpeg","ObjUrl":"http:\/\/www.zbkczx.com\/d\/file\/2019-12-29\/a9b91f54c9f9e6d10af75d5b876e3748.jpeg","FromURL":"http:\/\/www.zbkczx.com\/detail\/2052.html","FromUrl":"http:\/\/www.zbkczx.com\/detail\/2052.html"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2186503775,1336869966&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2186503775,1336869966&fm=26&gp=0.jpg",            "pageNum":13,            "objURL":"http://00imgmini.eastday.com/mobile/20181111/20181111211910_ddaf711aa721c6ad47f5b2fd753cfdb2_3.jpeg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Ffr56pf_z&e3B45r_z&e3Bv54AzdH3FwAzdH3F8b8888d88l8ad8naaaaaa_z&e3Bip4s",            "fromURLHost":"sports.mop.com","currentIndex":"",            "width":640,            "height":411,            "type":"jpeg",            "is_gif":0,            "strategyAssessment": "3391629618_33_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"31680",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2011-10-27 11:10",            "fromPageTitle":"两亿球迷围观!47+19+4,姚易大战当时在<strong>nba<\/strong>空前火爆!",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "2186503775,1336869966",            "os" : "1242261533,4164260151",            "simid" : "3442102790,268572528",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=172875989,67499003&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img4.imgtn.bdimg.com\/it\/u=172875989,67499003&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img4.imgtn.bdimg.com\/it\/u=172875989,67499003&fm=214&gp=0.jpg","FromURL":"http:\/\/www.qq545.com\/xinwen\/\u9475\u6350\ue186\u93ac\u5e9d\u7b9e\u942a\u5a99ba\u9365\u70b4\u6581\u93b5\u5b2b\u6e80.html","FromUrl":"http:\/\/www.qq545.com\/xinwen\/\u9475\u6350\ue186\u93ac\u5e9d\u7b9e\u942a\u5a99ba\u9365\u70b4\u6581\u93b5\u5b2b\u6e80.html"},{"ObjURL":"http:\/\/i.gtimg.cn\/qqlive\/img\/jpgcache\/files\/qqvideo\/hori\/q\/q8r7gtn2j4yp8sp.jpg","ObjUrl":"http:\/\/i.gtimg.cn\/qqlive\/img\/jpgcache\/files\/qqvideo\/hori\/q\/q8r7gtn2j4yp8sp.jpg","FromURL":"http:\/\/weimeiba.com\/so\/2017nba\u603b\u51b3\u8d5b\u817e\u8baf\u56de\u653e.html","FromUrl":"http:\/\/weimeiba.com\/so\/2017nba\u603b\u51b3\u8d5b\u817e\u8baf\u56de\u653e.html"}],"adType":"0","middleURL":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=172875989,67499003&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=172875989,67499003&fm=26&gp=0.jpg",            "pageNum":14,            "objURL":"http://i.gtimg.cn/qqlive/img/jpgcache/files/qqvideo/hori/q/q8r7gtn2j4yp8sp.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fooo_z&e3Bf1uhx4_z&e3Bv54AzdH3Ff5AzdH3Fwt%El%l8%Bc%Em%bD%la%EE%bm%bmgkw%E0%ba%Bl%Ec%B8%BE%Em%lA%An%El%bD%Ac%E0%bd%B9%Em%lm%b8",            "fromURLHost":"www.sdfkxm.com","currentIndex":"",            "width":3453,            "height":1941,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1318594866_35_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"207900",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2018-12-08 02:55",            "fromPageTitle":"腾讯<strong>nba<\/strong>完整回放",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "172875989,67499003",            "os" : "3202389353,2870005361",            "simid" : "3187258945,3821645472",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2519856324,3948921566&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img4.imgtn.bdimg.com\/it\/u=2519856324,3948921566&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img4.imgtn.bdimg.com\/it\/u=2519856324,3948921566&fm=214&gp=0.jpg","FromURL":"http:\/\/www.fcnygl.cn\/tiyu\/20190128\/26363.html","FromUrl":"http:\/\/www.fcnygl.cn\/tiyu\/20190128\/26363.html"},{"ObjURL":"http:\/\/00imgmini.eastday.com\/mobile\/20180925\/20180925144825_e64cee425da602485e76d291994f60a6_1.jpeg","ObjUrl":"http:\/\/00imgmini.eastday.com\/mobile\/20180925\/20180925144825_e64cee425da602485e76d291994f60a6_1.jpeg","FromURL":"http:\/\/sports.eastday.com\/a\/180925144825197000000.html","FromUrl":"http:\/\/sports.eastday.com\/a\/180925144825197000000.html"}],"adType":"0","middleURL":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2519856324,3948921566&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2519856324,3948921566&fm=26&gp=0.jpg",            "pageNum":15,            "objURL":"http://5b0988e595225.cdn.sohucs.com/images/20180925/1c4d6f6c4fd94a7b802b8f816b703356.jpeg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fooo_z&e3Bf5i7_z&e3Bv54AzdH3FwAzdH3Fdcma8llml_9bl0a0",            "fromURLHost":"www.sohu.com","currentIndex":"",            "width":690,            "height":690,            "type":"jpeg",            "is_gif":0,            "strategyAssessment": "1310206258_37_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"47960",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2018-05-10 12:26",            "fromPageTitle":"<strong>nba<\/strong>媒体日特别定妆照,湖人分2派,03白金一代引人泪目",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "2519856324,3948921566",            "os" : "908965559,1596290623",            "simid" : "4195363826,566515635",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3699121215,2974240328&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img0.imgtn.bdimg.com\/it\/u=3699121215,2974240328&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img0.imgtn.bdimg.com\/it\/u=3699121215,2974240328&fm=214&gp=0.jpg","FromURL":"http:\/\/www.freep.cn\/toutiao\/2717886.htm","FromUrl":"http:\/\/www.freep.cn\/toutiao\/2717886.htm"},{"ObjURL":"http:\/\/c1.hoopchina.com.cn\/uploads\/star\/event\/images\/130125\/87fe82511e25858ae27431932930571fe69406cf.jpg","ObjUrl":"http:\/\/c1.hoopchina.com.cn\/uploads\/star\/event\/images\/130125\/87fe82511e25858ae27431932930571fe69406cf.jpg","FromURL":"http:\/\/flastsucai.tuxi.com.cn\/viewb-52329-523297285.html","FromUrl":"http:\/\/flastsucai.tuxi.com.cn\/viewb-52329-523297285.html"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3699121215,2974240328&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3699121215,2974240328&fm=26&gp=0.jpg",            "pageNum":16,            "objURL":"http://c1.hoopchina.com.cn/uploads/star/event/images/130125/87fe82511e25858ae27431932930571fe69406cf.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fr8n_z&e3Bu6jjr_z&e3BvgAzdH3Fr-98d80bb_z&e3Bwfrx",            "fromURLHost":"p13.freep.cn","currentIndex":"",            "width":600,            "height":407,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1132996914_27_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"211310",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2010-01-07 00:00",            "fromPageTitle":"<strong>nba<\/strong>篮球明星_nba篮球明星湖人队的詹姆斯高清电脑壁纸",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "3699121215,2974240328",            "os" : "4284717258,2279779388",            "simid" : "3386975265,451705848",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2410719195,3292151541&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img0.imgtn.bdimg.com\/it\/u=2410719195,3292151541&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img0.imgtn.bdimg.com\/it\/u=2410719195,3292151541&fm=214&gp=0.jpg","FromURL":"http:\/\/sports.cnr.cn\/pictures\/photos\/20151218\/t20151218_520836732_21.shtml","FromUrl":"http:\/\/sports.cnr.cn\/pictures\/photos\/20151218\/t20151218_520836732_21.shtml"},{"ObjURL":"http:\/\/xm.fjsen.com\/images\/attachement\/jpg\/site2\/20151218\/00235478a64517dd9b1c0d.jpg","ObjUrl":"http:\/\/xm.fjsen.com\/images\/attachement\/jpg\/site2\/20151218\/00235478a64517dd9b1c0d.jpg","FromURL":"http:\/\/xm.fjsen.com\/2015-12\/18\/content_17061414_all.htm","FromUrl":"http:\/\/xm.fjsen.com\/2015-12\/18\/content_17061414_all.htm"}],"adType":"0","middleURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2410719195,3292151541&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2410719195,3292151541&fm=26&gp=0.jpg",            "pageNum":17,            "objURL":"http://sports.cnr.cn/ncsport/tp/20151218/W020151218438723967258.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Ffr56pf_z&e3Bvg6_z&e3BvgAzdH3Fgvfr56pAzdH3FprAzdH3Fda8c8d8bAzdH3Fpda8c8d8b_cdab988m8_d8_z&e3Bfip4s",            "fromURLHost":"sports.cnr.cn","currentIndex":"",            "width":1280,            "height":853,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1331177778_42_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"185900",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2015-12-19 00:00",            "fromPageTitle":"刚进入<strong>nba<\/strong>,作为一个落选秀,书豪还没那么会玩,依旧是留着当年的学生",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "2410719195,3292151541",            "os" : "3470098907,2697040020",            "simid" : "3356595017,4291237203",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1724918637,193408128&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img2.imgtn.bdimg.com\/it\/u=1724918637,193408128&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img2.imgtn.bdimg.com\/it\/u=1724918637,193408128&fm=214&gp=0.jpg","FromURL":"http:\/\/zhidao.baidu.com\/question\/178475658780821444.html","FromUrl":"http:\/\/zhidao.baidu.com\/question\/178475658780821444.html"},{"ObjURL":"http:\/\/imgsrc.baidu.com\/forum\/w%3d580\/sign=2ac74056233fb80e0cd161df06d12ffb\/630a9b119313b07ee1ae1c6f0ed7912396dd8cba.jpg","ObjUrl":"http:\/\/imgsrc.baidu.com\/forum\/w%3d580\/sign=2ac74056233fb80e0cd161df06d12ffb\/630a9b119313b07ee1ae1c6f0ed7912396dd8cba.jpg","FromURL":"http:\/\/tieba.baidu.com\/p\/2803569510","FromUrl":"http:\/\/tieba.baidu.com\/p\/2803569510"}],"adType":"0","middleURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1724918637,193408128&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1724918637,193408128&fm=26&gp=0.jpg",            "pageNum":18,            "objURL":"http://gss0.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/48540923dd54564eb4cfa6c2b5de9c82d0584fa6.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fzit1w5_z&e3Bkwt17_z&e3Bv54AzdH3Fq7jfpt5gAzdH3F80b90cmcb0babd8999_z&e3Bip4s",            "fromURLHost":"zhidao.baidu.com","currentIndex":"",            "width":440,            "height":439,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "3373803826_31_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"26620",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2009-12-21 00:00",            "fromPageTitle":"<strong>nba<\/strong>这个庆祝动作是什么意思?如图\\(^o^)",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "1724918637,193408128",            "os" : "3936636020,1577233973",            "simid" : "3568492208,525326593",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3168524851,163085398&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img1.imgtn.bdimg.com\/it\/u=3168524851,163085398&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img1.imgtn.bdimg.com\/it\/u=3168524851,163085398&fm=214&gp=0.jpg","FromURL":"http:\/\/www.fjshuchi.com\/news\/jdmehjjhjjju8de.html","FromUrl":"http:\/\/www.fjshuchi.com\/news\/jdmehjjhjjju8de.html"},{"ObjURL":"http:\/\/kanimg.9ku.com\/tiyu\/upload\/2018\/0621\/94ca79579486d98311bbc5ecc735311a.jpg","ObjUrl":"http:\/\/kanimg.9ku.com\/tiyu\/upload\/2018\/0621\/94ca79579486d98311bbc5ecc735311a.jpg","FromURL":"http:\/\/msport.9ku.com\/content\/20180621\/297705_2.htm","FromUrl":"http:\/\/msport.9ku.com\/content\/20180621\/297705_2.htm"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3168524851,163085398&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3168524851,163085398&fm=26&gp=0.jpg",            "pageNum":19,            "objURL":"http://02.imgmini.eastday.com/mobile/20180621/20180621121115_5b844570ad0186a51c01d5c57bc8f2b4_6.jpeg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Ffr56pf_z&e3Bjwfp1wy_z&e3Bv54AzdH3FwAzdH3F8bamd88d888clbmaaaaaa-d_z&e3Bip4s",            "fromURLHost":"sports.eastday.com","currentIndex":"",            "width":640,            "height":822,            "type":"jpeg",            "is_gif":0,            "strategyAssessment": "1273506098_31_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"46860",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2011-12-20 00:00",            "fromPageTitle":"<strong>nba<\/strong>全明星集合,快来认领你的球星手办",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "3168524851,163085398",            "os" : "1458096602,3298493256",            "simid" : "4199241209,716546467",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1415681221,499346100&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img1.imgtn.bdimg.com\/it\/u=1415681221,499346100&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img1.imgtn.bdimg.com\/it\/u=1415681221,499346100&fm=214&gp=0.jpg","FromURL":"http:\/\/baijiahao.baidu.com\/s?id=1651977390917786683&wfr=spider&for=pc","FromUrl":"http:\/\/baijiahao.baidu.com\/s?id=1651977390917786683&wfr=spider&for=pc"},{"ObjURL":"http:\/\/5b0988e595225.cdn.sohucs.com\/q_mini,c_zoom,w_640\/images\/20171120\/6892693751be48608578518a0b0868c7.jpeg","ObjUrl":"http:\/\/5b0988e595225.cdn.sohucs.com\/q_mini,c_zoom,w_640\/images\/20171120\/6892693751be48608578518a0b0868c7.jpeg","FromURL":"http:\/\/m.sohu.com\/a\/205437553_100063491","FromUrl":"http:\/\/m.sohu.com\/a\/205437553_100063491"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1415681221,499346100&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1415681221,499346100&fm=26&gp=0.jpg",            "pageNum":20,            "objURL":"http://n.sinaimg.cn/sinacn20118/332/w844h1088/20190122/c3d7-hryfqhk8508570.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fh_z&e3Bftgw_z&e3Bv54_z&e3BvgAzdH3Fw6ptvsj_mcc0m0dnad_8bm1jdnmjaa8aa19gf_z&e3Bip4s?u654=fr56pf",            "fromURLHost":"k.sina.com.cn","currentIndex":"",            "width":844,            "height":1088,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1264068914_29_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"140030",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2017-11-20 12:20",            "fromPageTitle":"那些<strong>nba<\/strong>的名场面,画面够经典,我也就看十遍",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "1415681221,499346100",            "os" : "2163362319,43923773",            "simid" : "3400881395,222845863",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2254670204,2595643330&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img4.imgtn.bdimg.com\/it\/u=2254670204,2595643330&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img4.imgtn.bdimg.com\/it\/u=2254670204,2595643330&fm=214&gp=0.jpg","FromURL":"http:\/\/lanqiu.jc258.cn\/topics\/lq_nlsjb\/119648","FromUrl":"http:\/\/lanqiu.jc258.cn\/topics\/lq_nlsjb\/119648"},{"ObjURL":"http:\/\/assets.jc258.cn\/assets\/pictures\/27830\/original_1444292351340.jpg","ObjUrl":"http:\/\/assets.jc258.cn\/assets\/pictures\/27830\/original_1444292351340.jpg","FromURL":"http:\/\/jaokao.tuxi.com.cn\/viewb-56375-563756134.html","FromUrl":"http:\/\/jaokao.tuxi.com.cn\/viewb-56375-563756134.html"}],"adType":"0","middleURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2254670204,2595643330&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2254670204,2595643330&fm=26&gp=0.jpg",            "pageNum":21,            "objURL":"http://assets.jc258.cn/assets/pictures/27830/original_1444292351340.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fzq_z&e3B3vdcb_z&e3BvgAzdH3Fp5rtvfAzdH3Fgsf3kAzdH3F88lm9b",            "fromURLHost":"zq.jc258.cn","currentIndex":"",            "width":560,            "height":419,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "3300403506_37_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"140250",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2010-01-11 00:00",            "fromPageTitle":"2015-2016<strong>nba<\/strong>季前赛赛程表 最新赛果比分",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "2254670204,2595643330",            "os" : "2470461725,186821302",            "simid" : "4262289324,739028603",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2985125743,601431031&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img3.imgtn.bdimg.com\/it\/u=2985125743,601431031&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img3.imgtn.bdimg.com\/it\/u=2985125743,601431031&fm=214&gp=0.jpg","FromURL":"http:\/\/www.sohu.com\/a\/115429952_486008","FromUrl":"http:\/\/www.sohu.com\/a\/115429952_486008"},{"ObjURL":"http:\/\/www.tcsports.com.cn\/uploads\/allimg\/151105\/1-1511051q10q21.jpg","ObjUrl":"http:\/\/www.tcsports.com.cn\/uploads\/allimg\/151105\/1-1511051q10q21.jpg","FromURL":"http:\/\/www.tcsports.com.cn\/m\/view.php?aid=6656","FromUrl":"http:\/\/www.tcsports.com.cn\/m\/view.php?aid=6656"}],"adType":"0","middleURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2985125743,601431031&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2985125743,601431031&fm=26&gp=0.jpg",            "pageNum":22,            "objURL":"http://www.tcsports.com.cn/uploads/allimg/151105/1-1511051Q10Q21.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fooo_z&e3Bpvfr56pf_z&e3Bv54_z&e3BvgAzdH3F4AzdH3Fetjo_z&e3Brir?wt1=mmcm",            "fromURLHost":"www.tcsports.com.cn","currentIndex":"",            "width":650,            "height":456,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1265117490_35_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"29810",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2016-05-19 06:09",            "fromPageTitle":"回归<strong>nba<\/strong>不易-尼克斯武贾西奇",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "2985125743,601431031",            "os" : "2749201681,1606944422",            "simid" : "3174735,716407952",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3676617427,4087106729&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img2.imgtn.bdimg.com\/it\/u=3676617427,4087106729&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img2.imgtn.bdimg.com\/it\/u=3676617427,4087106729&fm=214&gp=0.jpg","FromURL":"http:\/\/www.freep.cn\/toutiao\/2645804.htm","FromUrl":"http:\/\/www.freep.cn\/toutiao\/2645804.htm"},{"ObjURL":"http:\/\/image.meifajie.com\/attachments\/image\/2017-10\/20171028101042_28145.jpg","ObjUrl":"http:\/\/image.meifajie.com\/attachments\/image\/2017-10\/20171028101042_28145.jpg","FromURL":"http:\/\/www.xici.net\/iche\/edua-5502980.html","FromUrl":"http:\/\/www.xici.net\/iche\/edua-5502980.html"}],"adType":"0","middleURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3676617427,4087106729&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3676617427,4087106729&fm=26&gp=0.jpg",            "pageNum":23,            "objURL":"http://image.meifajie.com/attachments/image/2017-10/20171028101042_28145.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fooo9_z&e3Bu6jjr_z&e3BvgAzdH3Fi5pAzdH3Fb900bc_z&e3Bip4s",            "fromURLHost":"www4.freep.cn","currentIndex":"",            "width":1280,            "height":720,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "3478661426_38_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"138270",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2017-10-25 18:00",            "fromPageTitle":"打篮球适合剪什么发型 <strong>nba<\/strong>好看的发型盘点",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "3676617427,4087106729",            "os" : "1304280935,3726943208",            "simid" : "3291718486,145774742",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1834767505,3716623027&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img0.imgtn.bdimg.com\/it\/u=1834767505,3716623027&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img0.imgtn.bdimg.com\/it\/u=1834767505,3716623027&fm=214&gp=0.jpg","FromURL":"http:\/\/weimeiba.com\/so\/\u9475\u6350\ue186\u6d63\u64b9\u505bnba\u947b\u8fa8\u6783\u9358\u71b7\uff10.html","FromUrl":"http:\/\/weimeiba.com\/so\/\u9475\u6350\ue186\u6d63\u64b9\u505bnba\u947b\u8fa8\u6783\u9358\u71b7\uff10.html"},{"ObjURL":"http:\/\/img1.gtimg.com\/sports\/pics\/hv1\/142\/150\/1461\/95039917.jpg","ObjUrl":"http:\/\/img1.gtimg.com\/sports\/pics\/hv1\/142\/150\/1461\/95039917.jpg","FromURL":"http:\/\/www.freep.cn\/toutiao\/2483358.htm","FromUrl":"http:\/\/www.freep.cn\/toutiao\/2483358.htm"}],"adType":"0","middleURL":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1834767505,3716623027&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1834767505,3716623027&fm=26&gp=0.jpg",            "pageNum":24,            "objURL":"http://img1.gtimg.com/sports/pics/hv1/142/150/1461/95039917.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fooo_z&e3Bp7xt_z&e3Bv54_z&e3BvgAzdH3Fetjof-8n088mbdlaam-8n088mbdlaam8c99_z&e3Bip4s",            "fromURLHost":"www.tuxi.com.cn","currentIndex":"",            "width":680,            "height":380,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1265117490_35_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"100650",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2014-06-14 00:00",            "fromPageTitle":"腾讯<strong>nba<\/strong>直播中宣传片插曲i will be show you how great i am是什么歌",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "1834767505,3716623027",            "os" : "4010552879,715258519",            "simid" : "4180612107,818571175",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3982332940,4066925443&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img0.imgtn.bdimg.com\/it\/u=3982332940,4066925443&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img0.imgtn.bdimg.com\/it\/u=3982332940,4066925443&fm=214&gp=0.jpg","FromURL":"http:\/\/tieba.baidu.com\/p\/532083115","FromUrl":"http:\/\/tieba.baidu.com\/p\/532083115"},{"ObjURL":"http:\/\/sports.cctv.com\/20090129\/images\/1233196042733_u2085p6t12d4190538f44dt20090129091521.jpg","ObjUrl":"http:\/\/sports.cctv.com\/20090129\/images\/1233196042733_u2085p6t12d4190538f44dt20090129091521.jpg","FromURL":"http:\/\/sports.cctv.com\/20090129\/101147.shtml","FromUrl":"http:\/\/sports.cctv.com\/20090129\/101147.shtml"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3982332940,4066925443&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3982332940,4066925443&fm=26&gp=0.jpg",            "pageNum":25,            "objURL":"http://i0.sinaimg.cn/ty/k/2009-01-29/U2085P6T12D4190538F44DT20090129091521.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Ffr56pf_z&e3Bftgw_z&e3Bv54_z&e3BvgAzdH3FhAzdH3Fdaal-a8-dlAzdH3Falal98lacnb_z&e3Bfip4s",            "fromURLHost":"sports.sina.com.cn","currentIndex":"",            "width":300,            "height":480,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "3195545906_28_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"131230",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2009-01-23 17:14",            "fromPageTitle":"<strong>nba<\/strong>球衣销量排行:科比湖人双登顶 火箭无人上榜",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "3982332940,4066925443",            "os" : "2531670978,3417302638",            "simid" : "3479926842,337303821",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3821431087,819587288&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img2.imgtn.bdimg.com\/it\/u=3821431087,819587288&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img2.imgtn.bdimg.com\/it\/u=3821431087,819587288&fm=214&gp=0.jpg","FromURL":"http:\/\/www4.freep.cn\/article-529211.xml","FromUrl":"http:\/\/www4.freep.cn\/article-529211.xml"},{"ObjURL":"http:\/\/politics.people.com.cn\/nmediafile\/2014\/1111\/main201411112123000398336386922.jpg","ObjUrl":"http:\/\/politics.people.com.cn\/nmediafile\/2014\/1111\/main201411112123000398336386922.jpg","FromURL":"http:\/\/www.miit-netc.org\/huanqiu\/zhizongjuesai.html","FromUrl":"http:\/\/www.miit-netc.org\/huanqiu\/zhizongjuesai.html"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3821431087,819587288&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3821431087,819587288&fm=26&gp=0.jpg",            "pageNum":26,            "objURL":"http://politics.people.com.cn/NMediaFile/2014/1111/MAIN201411112123000398336386922.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fr5stptvf_z&e3Brj5rsj_z&e3Bv54_z&e3BvgAzdH3FgAzdH3Fda89AzdH3F8888AzdH3Fvnmmanc-dmaa0c0m_z&e3Bip4s",            "fromURLHost":"politics.people.com.cn","currentIndex":"",            "width":600,            "height":418,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1138239794_37_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"130570",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2014-11-11 00:00",            "fromPageTitle":"2014至2015赛季<strong>nba<\/strong>常规赛赛况",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "3821431087,819587288",            "os" : "56235214,3447153742",            "simid" : "4151751782,495502102",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1463499946,2944356733&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img1.imgtn.bdimg.com\/it\/u=1463499946,2944356733&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img1.imgtn.bdimg.com\/it\/u=1463499946,2944356733&fm=214&gp=0.jpg","FromURL":"http:\/\/weimeiba.com\/so\/nba\u5168\u5458\u7684\u7167\u7247.html","FromUrl":"http:\/\/weimeiba.com\/so\/nba\u5168\u5458\u7684\u7167\u7247.html"},{"ObjURL":"http:\/\/imgsrc.baidu.com\/forum\/w%3d580\/sign=8719489831adcbef01347e0e9cae2e0e\/e311728b4710b9129f4787a2c3fdfc03934522e3.jpg","ObjUrl":"http:\/\/imgsrc.baidu.com\/forum\/w%3d580\/sign=8719489831adcbef01347e0e9cae2e0e\/e311728b4710b9129f4787a2c3fdfc03934522e3.jpg","FromURL":"http:\/\/tieba.baidu.com\/p\/1192589846","FromUrl":"http:\/\/tieba.baidu.com\/p\/1192589846"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1463499946,2944356733&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1463499946,2944356733&fm=26&gp=0.jpg",            "pageNum":27,            "objURL":"http://photocdn.sohu.com/20110220/Img279431935.jpg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Ffr56pf_z&e3Bf5i7_z&e3Bv54AzdH3Fda88addaAzdH3Fgd0l9n8lnn_z&e3Bfip4s",            "fromURLHost":"sports.sohu.com","currentIndex":"",            "width":500,            "height":750,            "type":"jpg",            "is_gif":0,            "strategyAssessment": "1171794226_33_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"58960",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2011-02-20 11:22",            "fromPageTitle":"图文:[<strong>nba<\/strong>]全明星三分大赛 赖特在比赛中",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "1463499946,2944356733",            "os" : "1534416921,65810989",            "simid" : "4172428636,561919063",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2315121763,1170734734&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img3.imgtn.bdimg.com\/it\/u=2315121763,1170734734&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img3.imgtn.bdimg.com\/it\/u=2315121763,1170734734&fm=214&gp=0.jpg","FromURL":"http:\/\/sports.eastday.com\/a\/190101132128635000000-2.html","FromUrl":"http:\/\/sports.eastday.com\/a\/190101132128635000000-2.html"},{"ObjURL":"http:\/\/09.imgmini.eastday.com\/mobile\/20180817\/a348b808703e876efe319d3833912374_wmk.jpeg","ObjUrl":"http:\/\/09.imgmini.eastday.com\/mobile\/20180817\/a348b808703e876efe319d3833912374_wmk.jpeg","FromURL":"http:\/\/sports.mop.com\/a\/180817130036180000000.html","FromUrl":"http:\/\/sports.mop.com\/a\/180817130036180000000.html"}],"adType":"0","middleURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2315121763,1170734734&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2315121763,1170734734&fm=26&gp=0.jpg",            "pageNum":28,            "objURL":"http://img.weitiyuba.com/mmbiz_jpg/7lJCgXic8MVKSMovaP5qhYJ0uNJkw3RuibWrt8g8cVyPl3icpkI0gT21QFgtztsBbw8J0Q0INicNOJ4WeicDukjD2Ow/0?wx_fmt.jpeg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Fooo_z&e3Bojtpty7kw_z&e3Bv54AzdH3Fu55pkwssAzdH3F8ldbc9_z&e3Bip4s",            "fromURLHost":"www.weitiyuba.com","currentIndex":"",            "width":1280,            "height":720,            "type":"jpeg",            "is_gif":0,            "strategyAssessment": "1164454194_30_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"34210",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2018-08-17 13:00",            "fromPageTitle":"【<strong>nba<\/strong>】本·西蒙斯到底是小号詹姆斯还是新版魔术师?",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "2315121763,1170734734",            "os" : "2997720023,1399971053",            "simid" : "3594760082,173704415",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{"thumbURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3524845957,3631383054&fm=26&gp=0.jpg","replaceUrl": [{"ObjURL":"http:\/\/img2.imgtn.bdimg.com\/it\/u=3524845957,3631383054&fm=214&gp=0.jpg","ObjUrl":"http:\/\/img2.imgtn.bdimg.com\/it\/u=3524845957,3631383054&fm=214&gp=0.jpg","FromURL":"http:\/\/sports.mop.com\/a\/180426212857333000000.html","FromUrl":"http:\/\/sports.mop.com\/a\/180426212857333000000.html"}],"adType":"0","middleURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3524845957,3631383054&fm=26&gp=0.jpg",            "largeTnImageUrl":"",            "hasLarge" :0,            "hoverURL":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3524845957,3631383054&fm=26&gp=0.jpg",            "pageNum":29,            "objURL":"http://06.imgmini.eastday.com/mobile/20180426/20180426212857_448ebcbb6a9adf92940c8be81469ed8d_2.jpeg",            "fromURL":"ippr_z2C$qAzdH3FAzdH3Ffr56pf_z&e3B45r_z&e3Bv54AzdH3FwAzdH3F8ba9dmd8dbc0nnnaaaaaa_z&e3Bip4s",            "fromURLHost":"sports.mop.com","currentIndex":"",            "width":640,            "height":590,            "type":"jpeg",            "is_gif":0,            "strategyAssessment": "1178085682_38_0_0",            "filesize":"",            "bdSrcType":"0",            "di":"112750",            "is":"0,0",            "partnerId":0,            "bdSetImgNum":0,            "spn":0,            "bdImgnewsDate":"2009-12-26 00:00",            "fromPageTitle":"<strong>nba<\/strong>最难防的后卫是谁?全nba人都拿库里没办法?",            "bdSourceName":"",            "bdFromPageTitlePrefix":"",            "isAspDianjing":0,"token":"",            "imgType" : "",            "adid":"0",            "pi":"0",            "cs" : "3524845957,3631383054",            "os" : "1582855471,232375975",            "simid" : "0,0",            "source_type":"",            "personalized":"0",            "base64": '',            "adPicId": "0"        },{}]}
+);
+    app.setData('fcadData', {"fcData":[],"fcMidData":[],"fcBtData":[],"fcType":"","adType":0,"fcAdDatasLen":"0"}
+);
+    app.setData('xgMidData', {"xgMidData":[],"xgMidDataLen":"0"});
+    app.setData('rpData', {"data": []});
+    app.setData('shootBannerData', window.shootBannerData);
+    app.setData('browserRsData', {    "Status" : "0",    "query" : "",    "desc" : "",    "id" : "",    "photos" :[]}
+);
+    app.setData('rsQuery', [["NBA 球队", "NBA%20%C7%F2%B6%D3", "0", "0"],["Nba 全明星", "Nba%20%C8%AB%C3%F7%D0%C7", "0", "0"],["Nba壁纸", "Nba%B1%DA%D6%BD", "0", "0"],["Nba头像", "Nba%CD%B7%CF%F1", "0", "0"],["Nba标志", "Nba%B1%EA%D6%BE", "0", "0"]]);
+    app.setData('hotWords', [{            "query": "重庆4.8级地震",            "flag": "重庆4.8级地震",            "url": "http:\/\/image.baidu.com\/search\/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=sugrec&sf=1&fmq=1452955267929_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E9%87%8D%E5%BA%864.8%E7%BA%A7%E5%9C%B0%E9%9C%87",            "hot": "0",            "fromurl": "",            "photos": []        },{            "query": "内蒙古现罕见日柱",            "flag": "内蒙古现罕见日柱",            "url": "http:\/\/image.baidu.com\/search\/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=sugrec&sf=1&fmq=1452955267929_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E5%86%85%E8%92%99%E5%8F%A4%E7%8E%B0%E7%BD%95%E8%A7%81%E6%97%A5%E6%9F%B1",            "hot": "0",            "fromurl": "",            "photos": []        },{            "query": "女歌手本兮22岁逝世",            "flag": "女歌手本兮22岁逝世",            "url": "http:\/\/image.baidu.com\/search\/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=sugrec&sf=1&fmq=1452955267929_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E5%A5%B3%E6%AD%8C%E6%89%8B%E6%9C%AC%E5%85%AE22%E5%B2%81%E9%80%9D%E4%B8%96",            "hot": "0",            "fromurl": "",            "photos": []        },{            "query": "蒋劲夫托举佟丽娅",            "flag": "蒋劲夫托举佟丽娅",            "url": "http:\/\/image.baidu.com\/search\/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=sugrec&sf=1&fmq=1452955267929_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E8%92%8B%E5%8A%B2%E5%A4%AB%E6%89%98%E4%B8%BE%E4%BD%9F%E4%B8%BD%E5%A8%85",            "hot": "0",            "fromurl": "",            "photos": []        },{            "query": "打工钱被咬成碎片",            "flag": "打工钱被咬成碎片",            "url": "http:\/\/image.baidu.com\/search\/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=sugrec&sf=1&fmq=1452955267929_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E6%89%93%E5%B7%A5%E9%92%B1%E8%A2%AB%E5%92%AC%E6%88%90%E7%A2%8E%E7%89%87",            "hot": "0",            "fromurl": "",            "photos": []        },{            "query": "村民发现奇石似飞碟",            "flag": "村民发现奇石似飞碟",            "url": "http:\/\/image.baidu.com\/search\/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=sugrec&sf=1&fmq=1452955267929_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E6%9D%91%E6%B0%91%E5%8F%91%E7%8E%B0%E5%A5%87%E7%9F%B3%E4%BC%BC%E9%A3%9E%E7%A2%9F",            "hot": "0",            "fromurl": "",            "photos": []        },{            "query": "环卫夫妻身高不足一米四",            "flag": "环卫夫妻身高不足一米四",            "url": "http:\/\/image.baidu.com\/search\/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=sugrec&sf=1&fmq=1452955267929_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E7%8E%AF%E5%8D%AB%E5%A4%AB%E5%A6%BB%E8%BA%AB%E9%AB%98%E4%B8%8D%E8%B6%B3%E4%B8%80%E7%B1%B3%E5%9B%9B",            "hot": "0",            "fromurl": "",            "photos": []        },{            "query": "沙滩现巨大黑色怪物",            "flag": "沙滩现巨大黑色怪物",            "url": "http:\/\/image.baidu.com\/search\/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=sugrec&sf=1&fmq=1452955267929_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E6%B2%99%E6%BB%A9%E7%8E%B0%E5%B7%A8%E5%A4%A7%E9%BB%91%E8%89%B2%E6%80%AA%E7%89%A9",            "hot": "0",            "fromurl": "",            "photos": []        },{            "query": "黄子韬搂何炅",            "flag": "黄子韬搂何炅",            "url": "http:\/\/image.baidu.com\/search\/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=sugrec&sf=1&fmq=1452955267929_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=%E9%BB%84%E5%AD%90%E9%9F%AC%E6%90%82%E4%BD%95%E7%82%85",            "hot": "0",            "fromurl": "",            "photos": []        },{            "query": "2016nba圣诞大战",            "flag": "2016nba圣诞大战",            "url": "http:\/\/image.baidu.com\/search\/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=result&fr=sugrec&sf=1&fmq=1452955267929_R&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=2016nba%E5%9C%A3%E8%AF%9E%E5%A4%A7%E6%88%98",            "hot": "0",            "fromurl": "",            "photos": []        }]);
+
+    
+    
+    app.init();
+    app.run();
+});
+}();
+!function(){    window.tn = 'result';
+    window.vsid = 'd9d1ae93e0f4143315ef57e51c5f8a97bc84073c';
+    if ('index' === window.tn
+        || 'result' === window.tn
+        || 'detail' === window.tn) {
+        var sttb = document.getElementById('sttb');
+        sttb.removeAttribute && sttb.removeAttribute('title');
+    }
+    /**
+     * 统计代码
+    **/
+    window.ss = function(){
+        var URL = '//imgstat.baidu.com/9.gif?rainbow=1&';
+        function request(url){
+            var seed = Math.random();
+            var img = window[seed] = new Image;
+            img.onload = img.onerror = function(){
+                window[seed] = null;
+                img.onload = img.onerror = null;
+                img = null;
+            };
+            img.src = url;
+        }
+
+        /* p = 0, 首页八张demo图片点击统计
+         * p = 1, 结果页tab相关： name=stu相同tab显示；name=face 人脸搜索tab显示; type=show展现；type=click点击
+         * p = pv, 结果页PV统计：data=1，有结果；data=0无结果；data=-1，down页面
+         **/
+
+        return function(arg, url, e){
+            var s = URL + json2Query(arg) + '&' + Math.random();
+            request(s);
+            if(url){
+                setTimeout(function(){
+                    location.href = url;
+                }, 300);
+                e = e || window.event;
+                if(e){
+                    if(e.preventDefault){
+                        e.preventDefault();
+                    }else{
+                        e.returnValue = false;
+                    }
+                }
+
+            }
+        };
+
+    }();
+    window.__originTitle = document.title;
+    function json2Query(json){
+        if(json == null || typeof json != 'object') return json;
+        var query = [];
+        for(var i in json){
+            if(i != '')
+                query[query.length] = i + '=' + json[i];
+        }
+        return query.join('&');
+    }
+
+    require.async(["common:widget/ui/base/base","common:widget/shitu/run"],function($, shitu){
+        window.$ = $;
+        $(document).ready(function() {
+            var st = new shitu();
+            st.init();
+            window.stInstance = st;
+        });
+    });
+}();
+!function(){    require.async(["searchresult:widget/pagelets/base/topRs/topRs"],function(topRsClass){
+        var topRs = new topRsClass();
+        var changeFilter = false;
+                    changeFilter = true;
+                topRs.init({
+            changeFilter: changeFilter
+        });
+    })
+}();
+!function(){    if (window.hotspotData) {
+        require.async(['searchresult:widget/pagelets/base/timeliness/init'], function (Timeliness) {
+            new Timeliness().init(window.hotspotData);
+        });
+    }
+}();
+!function(){/**
+* isRefresh 用来判断禁止se或查询的参数是否生效,false表示无须清零，true表示需要清零
+*/
+require.async(["common:widget/ui/base/base","searchresult:widget/ui/utils/utils","common:widget/ui/historyRecord/historyRecord","common:widget/ui/utils/utils"],function( $, utils, HistoryRecord, commonUtils){
+
+    window.s_submit = function(form,isRefresh){
+
+
+//图片url检索跳转
+var keyword = form.word.value;
+
+if ($.trim(keyword).length > 0) {
+    var historyRecord = new HistoryRecord({historyKey: 'indexPageSugList'});
+    historyRecord.setRecord(keyword);
+    $.cookie.set('cleanHistoryStatus', 0, {path: '/'});
+}
+
+
+var tiaoma = /^[\s]*http[s]*\:\/\/[\s\S]*\.[jpg|gif|png|bmp|jpeg]*[\s]*$/.test(keyword) ||/img5\.imgtn\.bdimg\.com/.test(keyword) || /mt1\.baidu\.com\/timg/.test(keyword);
+var ajaxURL = 'https://graph.baidu.com/upload?image=' + encodeURIComponent(keyword) + '&range=imagePage&tn=pc&from=pc&image_source=PC_UPLOAD_IMAGE_ICONURL&extUiData%5bisLogoShow%5d=1';
+var isIE6789 = $.browser.msie && ($.browser.version <= 9);
+
+        if (tiaoma && !isIE6789) {
+            // speed
+            $.cookie('uploadTime', new Date().getTime(), {path: '/'});
+
+            $.ajax({
+                url: ajaxURL,
+                type: 'post',
+                success: function (response) {
+                    if (response.status === 0) {
+                        location.href = response.data.url;
+                    } else if (response.status === 1002) {
+                        alert('未找到该图片的详细信息，请上传其他图片');
+                    } else {
+                        alert('出错了！（规则未定）');
+                    }
+                },
+                error: function () {
+                    alert('网络问题，请稍候再试！');
+                }
+            });
+           return false;
+        }
+
+
+        var searchConf = utils.query2Json(utils.escapeXSS(window.location.search.substring(1)));
+        if(typeof searchConf.fm == "undefined"){searchConf.fm = '';}
+        if(typeof searchConf.fmq == "undefined"){searchConf.fmq = '';}
+        if(utils.trim(searchConf.queryWord) == form.word.value){
+            form.fmq.value = utils.fmqValueSet();
+        }else{
+            var fmqDate = new Date();
+            var T = fmqDate.getTime();
+            if(searchConf.fmq.indexOf('m') > -1 && searchConf.fmq.indexOf('_m') == -1 && searchConf.fmq.indexOf('_R') == -1){
+                var fmqvalue = searchConf.fmq;
+                form.fmq.value = T + '_' +fmqvalue + '_R';
+            }else{
+                form.fmq.value =  T + '_R';
+            }
+
+        }
+        var isflip = $('body').hasClass('flip');
+        form.tn.value = "baiduimage";
+
+        form.ct.value = "201326592";
+        form.cl.value = "2";
+        
+        form.pv.value = "";
+        form.action = "/search/index";
+
+        // 新筛选，及未命中阿凡达筛选时，重新检索时需要记录筛选
+                    form.z.value = commonUtils.getQueryValue('z');
+            form.ic.value = commonUtils.getQueryValue('ic');
+            form.lm.value = commonUtils.getQueryValue('lm');
+            form.hd.value = commonUtils.getQueryValue('hd');
+            form.latest.value = commonUtils.getQueryValue('latest');
+            form.copyright.value = commonUtils.getQueryValue('copyright');
+            form.width.value = commonUtils.getQueryValue('width');
+            form.height.value = commonUtils.getQueryValue('height');
+        
+        if (window.canUseHttps) {
+            form.action = 'https://' + window.location.host + '/search/index';
+        }
+
+        if(isflip) {
+            form.action = "/search/flip";
+        }
+        if(isRefresh == true){
+            // submit直接提交新query
+            form.se.value = "1";
+        }else{
+            var showtab =  parseInt(searchConf.showtab);
+            if(!isNaN(showtab)&&showtab>0){
+                form.showtab.value = showtab;
+            }
+        }
+        form.ctd.value = (+new Date()) + "^00_" + $(window).width() + "X" +  window.innerHeight;
+
+        return true;
+    }
+})
+
+}();
+!function(){    require.async(["searchresult:widget/pagelets/base/imgShowOpt/imgShowOpt"],function(imgShowOptClass){
+        var imgShowOpt= new imgShowOptClass();
+        imgShowOpt.init();
+    })
+}();
+!function(){
+		window.bid = -1;
+
+	if(!window.passport){
+	    var script = document.createElement("script");
+	    script.src = '//passport.baidu.com/passApi/js/uni_login_wrapper.js?cdnversion=' + (new Date).getTime();
+	    document.body.appendChild(script);
+	}
+	require.async(["common:widget/loginbar/loginbar"],function(loginbar){
+
+	    loginbar.init();        
+
+	});
+
+
+}();
+!function(){    require.async(['searchresult:widget/pagelets/base/backTop/init']);
+
+    require.async(['common:widget/ui/feedback/feedback'], function (feedback) {
+        var callbacks = {};
+        feedback.init(callbacks);
+    });
+}();
+!function(){            
+        require.async(['common:widget/ui/sourcehttps/sourcehttps'], function(init){
+            init({
+                tn: 'baiduimage',
+                word: 'nba',
+                sample: 100 - 0
+            });
+        });
+        var img = new Image();
+        img.src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1467190779130&di=ba3e0f927cfa5852f26f805954882af7&imgtype=png&src=http%3A%2F%2Fimg1.bdstatic.com%2Fstatic%2Fcommon%2Fwidget%2Fshitu%2Fimages%2Fcamera_b659d28.png';
+    
+        
+    require.async(['searchresult:widget/ui/utils/utils'], function(utils){
+        try {
+            utils.reportHttpsStatus();
+        } catch(e) {}
+    });
+}();
+!function(){    require.async(['common:widget/ui/monitorRequest/monitorRequest'],function(monitorRequest){
+	var userid = "";
+	var q = "nba";
+	var tn = "result";
+	var host = "//imgstat.baidu.com/4.gif";
+	var hostSweb = "//image.baidu.com/pv/pv2.gif";
+    var rsw = "";
+
+    if(location.href !== document.referrer && document.referrer != ""){
+        rsw = "&rs=";
+    }
+    else{
+        rsw = '';
+    }
+    var samplekey = window.samplekey || '';
+    var img = window["__log__" + (new Date()).getTime()*Math.random()] = document.createElement('img');
+    monitorRequest( host + "?logid=10056891424628052758&ie=utf-8&q="+ q +"&userid=" + userid + "&samplekey=" + encodeURIComponent(samplekey) + "&event_type=pv&tn=" + tn + "&tpl=result.page&fr=" + rsw);
+    var imgSweb = window["__log__" + (new Date()).getTime()*Math.random()] = document.createElement('img');
+    imgSweb.src = hostSweb + "?ie=utf-8&q="+ q +"&userid=" + userid + "&samplekey=" + encodeURIComponent(samplekey) + "&event_type=pv&tn=" + tn + "&tpl=&fr=" + rsw + '&' + new Date() * Math.random();
+    });
+}();
+!function(){    require.async(["common:widget/ui/fmCheck/fmCheck"],function(fmCheck){
+        fmCheck.init();
+    });
+}();
+!function(){require.async(['common:widget/ui/base/base'], function($) {
+    var userFrom = '';
+
+    var elem = document.createElement('a');
+    elem.href = document.referrer;
+    var hostname = elem['hostname'];
+    var urlfr = '';
+    var chenjin = '';
+    var urlword = 'nba';
+
+    if (hostname !== 'image.baidu.com') {
+        if (urlfr) {
+            userFrom += urlfr;
+            if (chenjin === '1') {
+                userFrom += 'chenjin1';
+            } else if (chenjin === '0') {
+                var wordList = ["%E7%BE%8E%E5%A5%B3%E5%9B%BE%E7%89%87",
+                    "%E6%89%8B%E6%9C%BA%E5%A3%81%E7%BA%B8",
+                    "%E6%89%8B%E6%9C%BA%E5%A3%81%E7%BA%B8%E5%9B%BE%E7%89%87",
+                    "%E5%A4%B4%E5%83%8F",
+                    "%E5%A4%B4%E5%83%8F%E5%9B%BE%E7%89%87"];
+                if (wordList.indexOf(urlword) >= 0) {
+                    userFrom += 'chenjin0';
+                }
+            }
+        } else {
+            userFrom = hostname;
+        }
+    } else {
+        userFrom = $.cookie('userFrom') || '';
+    }
+
+    if (userFrom.length > 0) {
+        var date = new Date();
+        date.setTime(date.getTime() + (10 * 60 * 1000));
+        $.cookie('userFrom', userFrom, {path: '/', expires: date, domain: '.baidu.com'});
+    } else {
+        $.cookie('userFrom', null, {path: '/', domain: '.baidu.com'});
+    }
+});
+}();
+!function(){            require.async(["common:widget/ui/durationStat/durationStat"],function(durationStat){
+            durationStat.heartStart({
+                pageId: 2 - 0,
+                sid: '125666a0d2eac58cddddc40fb5a22aee2d114c71',
+                cs: '',
+                word: 'nba'
+            });
+        });
+    }();</script>   </html> <!--00491787270827947786052616-->
+<script> var _trace_page_logid = 0049178727; </script>
